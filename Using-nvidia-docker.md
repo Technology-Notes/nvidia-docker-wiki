@@ -6,61 +6,34 @@
 
 ## Description
 
-`nvidia-docker` is a drop-in replacement for the `docker` command line interface and discovers host driver files, GPU devices, and sets up containers with NVIDIA GPUs for proper execution. For this purpose, a special Docker volume must be created before starting the containers. This volume can be created manually, or automatically by the [NVIDIA Docker plugin](Using nvidia-docker-plugin).
+`nvidia-docker` is a thin wrapper on top of `docker` and act as a drop-in replacement for the `docker` command line interface. This binary is provided as a convenience to automatically detect and setup GPU containers leveraging NVIDIA hardware. Refer to the [internals](https://github.com/NVIDIA/nvidia-docker/wiki/Internals) section if you don't intend to use it.
 
-`nvidia-docker` also takes care of most of the boilerplate code related to [remote deployments](#running-it-remotely).
-
-Internally, `nvidia-docker` calls `docker`. The command used by `nvidia-docker` can be overridden using the environment variable `NV_DOCKER`:
+Internally, `nvidia-docker` calls `docker` and relies on the [NVIDIA Docker plugin](Using nvidia-docker-plugin) to discover driver files and GPU devices. The command used by `nvidia-docker` can be overridden using the environment variable `NV_DOCKER`:
 ```sh
 # Running nvidia-docker with a custom docker command
 NV_DOCKER='sudo docker -D' nvidia-docker <docker-options> <docker-command> <docker-args>
 ```
-`nvidia-docker` only modifies the behavior of the `run`, `create` and `volume` docker commands. All the other commands are just pass-through to the docker CLI client. As a result, you can't execute GPU code when building a Docker image.
+Note that `nvidia-docker` only modifies the behavior of the `run` and `create` Docker commands. All the other commands are just pass-through to the docker command line interface. As a result, you can't execute GPU code when building a Docker image.
 
 ## GPU isolation
 
-GPUs are exported through a list of comma-separated IDs using the environment variable `NV_GPU`. The numbering is the same as reported by the `nvidia-docker-plugin` REST interface, `nvidia-smi`, or when running CUDA code with `CUDA_DEVICE_ORDER=PCI_BUS_ID`, it is however **different** from the default CUDA ordering. By default, all GPUs are exported.
+GPUs are exported through a list of comma-separated IDs using the environment variable `NV_GPU`. An ID is either the index or the UUID of a given device.  
+Device indexes are similar to the ones reported by the `nvidia-docker-plugin` REST interface, `nvidia-smi`, or when running CUDA code with `CUDA_DEVICE_ORDER=PCI_BUS_ID`, it is however **different** from the default CUDA ordering. By default, all GPUs are exported.
 
 ```sh
-# Running nvidia-docker isolating specific GPUs
+# Running nvidia-docker isolating specific GPUs by index
 NV_GPU='0,1' nvidia-docker <docker-options> <docker-command> <docker-args>
+# Running nvidia-docker isolating specific GPUs by UUID
+NV_GPU='GPU-836c0c09,GPU-b78a60a' nvidia-docker <docker-options> <docker-command> <docker-args>
 ```
 
 ## Running it locally
 
-#### With the NVIDIA Docker plugin
 If the `nvidia-docker-plugin` is installed on your host and running locally, no additional step is needed. `nvidia-docker` will perform what is necessary by querying the plugin when containers using NVIDIA GPUs need to be launched.
-
-#### Standalone version
-
-If you want to rely solely on `nvidia-docker` to run your containers, you will initially need to setup the NVIDIA driver volumes on your local machine.
-In order to do that, `nvidia-docker` provides an additional `setup` command to `docker volume`.
-This is a one-time setup as long as the NVIDIA driver doesn't change. This operation requires root privileges.
-
-```sh
-# Setup the NVIDIA driver volume using the current driver
-sudo nvidia-docker volume setup
-```
-
-In case you upgrade the NVIDIA drivers and want the change to be propagated to your containers, you will need to re-create the volume and re-run your existing containers (not images):
-
-```sh
-# Remove any previous setup
-nvidia-docker volume rm `nvidia-docker volume ls -q | grep '^nvidia_.*'`
-# Setup the NVIDIA driver volume using the updated driver
-sudo nvidia-docker volume setup
-```
-
-**Warning:** If you are using Docker < v1.10, `nvidia-docker run --rm` or `nvidia-docker rm -v` might remove some of the volumes required by `nvidia-docker` (see [docker#17907](https://github.com/docker/docker/issues/17907)).  
-In that case, you will need to either use `nvidia-docker-plugin`, set up the volumes again or use a data container as follows:
-```sh
-DRV="$(sudo nvidia-docker volume setup)"
-nvidia-docker create --name=nvidia_driver -v $DRV:/data:ro tianon/true
-```
 
 ## Running it remotely
 
-Using `nvidia-docker` remotely requires the [NVIDIA Docker plugin](Using nvidia-docker-plugin) running on the remote host machine.  
+Using `nvidia-docker` remotely requires `nvidia-docker-plugin` running on the remote host machine.  
 The remote host target can be set using the environment variable `DOCKER_HOST` or `NV_HOST`.
 
 The rules are as follows:
