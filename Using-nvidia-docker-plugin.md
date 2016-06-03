@@ -25,7 +25,7 @@ Usage of nvidia-docker-plugin:
   -v	Show the plugin version information
 ```
 
-If you are using binary packages, those can be changed in the init configuration file (`/etc/default/nvidia-docker` or `/etc/systemd/system/nvidia-docker.service.d/override.conf` depending on your distribution)
+If you are using binary packages, those can be changed in the init configuration file: `/etc/default/nvidia-docker` or `/etc/systemd/system/nvidia-docker.service.d/override.conf` depending on your distribution.
 
 Once the plugin is running, `nvidia-docker` will be able to connect to it and request information for containerization.
 In case you upgrade the NVIDIA drivers, you will need to restart the plugin.
@@ -51,7 +51,7 @@ REST endpoints are described below. Note that if a given client only cares about
 > It accepts two query-string parameters: `dev` for devices (akin to `NV_GPU`) and `vol` for volumes.  
 > Response format is `text/plain` and `application/json` respectively.
 >
-> This is useful if you don't want to rely on the `nvidia-docker` alternative CLI (see [Internals])  
+> This is useful if you don't want to rely on the `nvidia-docker` alternative CLI (see [[Internals]])  
 > ```docker run -ti `curl -s http://localhost:3476/v1.0/docker/cli?dev=0+1\&vol=nvidia_driver` cuda```
 
 * GET `/v1.0/mesos/cli`
