@@ -8,7 +8,7 @@
 
 `nvidia-docker` is a thin wrapper on top of `docker` and act as a drop-in replacement for the `docker` command line interface. This binary is provided as a convenience to automatically detect and setup GPU containers leveraging NVIDIA hardware. Refer to the [internals](https://github.com/NVIDIA/nvidia-docker/wiki/Internals) section if you don't intend to use it.
 
-Internally, `nvidia-docker` calls `docker` and relies on the [NVIDIA Docker plugin](Using nvidia-docker-plugin) to discover driver files and GPU devices. The command used by `nvidia-docker` can be overridden using the environment variable `NV_DOCKER`:
+Internally, `nvidia-docker` calls `docker` and relies on the [NVIDIA Docker plugin](nvidia-docker-plugin) to discover driver files and GPU devices. The command used by `nvidia-docker` can be overridden using the environment variable `NV_DOCKER`:
 ```sh
 # Running nvidia-docker with a custom docker command
 NV_DOCKER='sudo docker -D' nvidia-docker <docker-options> <docker-command> <docker-args>
