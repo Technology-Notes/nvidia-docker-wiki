@@ -12,6 +12,7 @@
   * [[CUDA]]
   * [[Caffe]]
   * [[DIGITS]]
+  * [[Third-party]]
 * [[Building images locally]]
 
 **Getting Started**
