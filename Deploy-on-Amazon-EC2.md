@@ -72,7 +72,7 @@ export NV_HOST="ssh://ubuntu@$(docker-machine ip aws01):"
 ssh-add ~/.docker/machine/machines/aws01/id_rsa
 ```
 
-Using `nvidia-docker` [remotely](Using-nvidia-docker#running-it-remotely) you can now deploy your containers in the Amazon cloud:
+Using `nvidia-docker` [remotely](nvidia-docker#running-it-remotely) you can now deploy your containers in the Amazon cloud:
 
 ```sh
 nvidia-docker run --rm nvidia/cuda nvidia-smi
