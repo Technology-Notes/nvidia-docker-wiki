@@ -51,7 +51,7 @@ REST endpoints are described below. Note that if a given client only cares about
 > It accepts two query-string parameters: `dev` for devices (akin to `NV_GPU`) and `vol` for volumes.  
 > Response format is `text/plain` and `application/json` respectively.
 >
-> This is useful if you don't want to rely on the `nvidia-docker` alternative CLI (see [[Internals]]). For example: 
+> This is useful if you don't want to rely on the `nvidia-docker` alternative CLI (see [[Internals]]). For example:  
 > ```docker run -ti `curl -s http://localhost:3476/v1.0/docker/cli?dev=0+1\&vol=nvidia_driver` cuda```
 
 * GET `/v1.0/mesos/cli`
