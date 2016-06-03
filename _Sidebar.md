@@ -4,7 +4,7 @@
 
 **Tools**
 * [[Installation]]
-* [[Using nvidia-docker]]
+* [[nvidia-docker]]
 * [[nvidia-docker-plugin]]
 
 **Images**
