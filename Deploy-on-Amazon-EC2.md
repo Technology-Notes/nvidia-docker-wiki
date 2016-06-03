@@ -45,7 +45,7 @@ docker-machine create --driver amazonec2 \
                       aws01
 ```
 
-Once the provisioning is completed, we install the NVIDIA drivers and NVIDIA Docker on the newly created instance.  
+Once the provisioning is completed, we install the NVIDIA drivers and NVIDIA Docker on the newly created instance (Ubuntu by default).  
 Note that if you create a custom [AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html), you could simply reuse it instead of doing what follows:
 
 ```sh
@@ -55,14 +55,11 @@ docker-machine ssh aws01
 # Install NVIDIA drivers 361.42
 sudo apt-get install --no-install-recommends -y gcc make libc-dev
 wget -P /tmp http://us.download.nvidia.com/XFree86/Linux-x86_64/361.42/NVIDIA-Linux-x86_64-361.42.run
-sudo sh /tmp/NVIDIA-Linux-x86_64-361.42.run
+sudo sh /tmp/NVIDIA-Linux-x86_64-361.42.run --silent
 
 # Install nvidia-docker and nvidia-docker-plugin
-wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.0-rc/nvidia-docker_1.0.0.rc-1_amd64.deb
-sudo dpkg -i /tmp/nvidia-docker_1.0.0.rc-1_amd64.deb
-
-# Run nvidia-docker-plugin
-sudo -b nohup nvidia-docker-plugin > /tmp/nvidia-docker.log
+wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.0-rc.2/nvidia-docker_1.0.0.rc.2-1_amd64.deb
+sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
 ```
 
 ## Container deployment
