@@ -32,7 +32,7 @@ In case you upgrade the NVIDIA drivers, you will need to restart the plugin.
 
 ## REST API
 
-By default, `nvidia-docker-plugin` serves its REST interface locally on port `3476`. This will effectively prevent `nvidia-docker` from accessing the machine remotely through the `http` protocol (see [remote deployments](Using nvidia-docker#running-it-remotely)). This behavior can be changed using the `-l` [usage option](#usage) (e.g `-l :1234` for the wildcard address port `1234`).
+By default, `nvidia-docker-plugin` serves its REST interface locally on port `3476`. This will effectively prevent `nvidia-docker` from accessing the machine remotely through the `http` protocol (see [remote deployments](nvidia-docker#running-it-remotely)). This behavior can be changed using the `-l` [usage option](#usage) (e.g `-l :1234` for the wildcard address port `1234`).
 
 REST endpoints are described below. Note that if a given client only cares about the latest API version, the version prefix can be omitted (i.e. `/gpu/info` is currently equivalent to `/v1.0/gpu/info`)
 
