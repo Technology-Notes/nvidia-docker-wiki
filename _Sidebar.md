@@ -10,7 +10,7 @@
 **Images**
 * [[List of available images]]
   * [[CUDA]]
-  * [[Caffe]]
+  * [[NVIDIA Caffe]]
   * [[DIGITS]]
   * [[Third-party]]
 * [[Building images locally]]
