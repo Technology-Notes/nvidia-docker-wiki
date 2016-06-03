@@ -13,34 +13,22 @@ The plugin also provides a [REST API](#rest-api) that one can query to get GPU i
 ## Usage
 
 The plugin daemon can be tuned using the following arguments:  
-(If you are using the debian package, those can be changed using the configuration file `/etc/default/nvidia-docker`)
 
 ```sh
+Usage of nvidia-docker-plugin:
+  -d string
+    	Path where to store the volumes (default "/var/lib/nvidia-docker/volumes")
   -l string
-        Server listen address (default "localhost:3476")
+    	Server listen address (default "localhost:3476")
   -s string
-        NVIDIA plugin socket path (default "/run/docker/plugins")
-  -v string
-        Path where to store the volumes (default "/var/lib/nvidia-docker/volumes")
+    	Path to the plugin socket (default "/run/docker/plugins")
+  -v	Show the plugin version information
 ```
+
+If you are using binary packages, those can be changed in the init configuration file (`/etc/default/nvidia-docker` or `/etc/systemd/system/nvidia-docker.service.d/override.conf` depending on your distribution)
 
 Once the plugin is running, `nvidia-docker` will be able to connect to it and request information for containerization.
 In case you upgrade the NVIDIA drivers, you will need to restart the plugin.
-
-By default, if you run `nvidia-docker-plugin` manually, it will require root privileges to create the Docker plugin socket. However, you can run it in an _almost_ unprivileged fashion by doing the following as root:
-
-```sh
-# Add a system user nvidia-docker
-adduser --system --home /var/lib/nvidia-docker nvidia-docker
-# Register the plugin with the Docker daemon
-mkdir -p /etc/docker/plugins
-echo "unix:///var/lib/nvidia-docker/nvidia-docker.sock" > /etc/docker/plugins/nvidia-docker.spec
-# Set the mandatory permission
-setcap cap_fowner+pe /usr/bin/nvidia-docker-plugin
-
-# Run nvidia-docker-plugin as the nvidia-docker user
-sudo -u nvidia-docker nvidia-docker-plugin -s /var/lib/nvidia-docker
-```
 
 ## REST API
 
@@ -58,11 +46,13 @@ REST endpoints are described below. Note that if a given client only cares about
 > Queries the GPU devices status (akin to `nvidia-smi`).  
 > Response format is `text/plain` and `application/json` respectively.
 
-* GET `/v1.0/docker/cli`
+* GET `/v1.0/docker/cli`, `/v1.0/docker/cli/json`
 > Queries the command-line parameters to use with `docker run` or `docker create`.  
 > It accepts two query-string parameters: `dev` for devices (akin to `NV_GPU`) and `vol` for volumes.  
-> This is useful if you don't want to rely on the `nvidia-docker` alternative CLI:  
-> ```docker run -ti `curl -s http://localhost:3476/v1.0/docker/cli?dev=0+1\&vol=nvidia_driver` cuda```  
+> Response format is `text/plain` and `application/json` respectively.
+>
+> This is useful if you don't want to rely on the `nvidia-docker` alternative CLI (see [Internals])  
+> ```docker run -ti `curl -s http://localhost:3476/v1.0/docker/cli?dev=0+1\&vol=nvidia_driver` cuda```
 
 * GET `/v1.0/mesos/cli`
 > Queries the command-line parameters to use when starting a Mesos agent.  
@@ -72,6 +62,6 @@ REST endpoints are described below. Note that if a given client only cares about
 
 1. NVIDIA driver installation needs to live on the same partition as the volume directory of the Docker plugin.  
 `nvidia-docker-plugin` internally needs to create hard links to some driver files. Because of this, you need the NVIDIA driver (usually found under `/usr`) to be on the same partition as the Docker plugin volume directory (`/var` by default).
-Possible workarounds includes installing your NVIDIA driver at a different location (see ``--advanced-options`` of the installer) or changing your plugin volume directory (see `nvidia-docker-plugin -v`)
+Possible workarounds includes installing your NVIDIA driver at a different location (see ``--advanced-options`` of the installer) or changing your plugin volume directory (see `nvidia-docker-plugin -d`)
 
 **It is not recommended** to place the `nvidia-docker-plugin` volume directory under the same directory structure as the NVIDIA drivers (i.e. `/usr/lib`, `/usr/lib64` ...). This is due to the NVIDIA installer performing checks for conflicting files before performing an upgrade.
