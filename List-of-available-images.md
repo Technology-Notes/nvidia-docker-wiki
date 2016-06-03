@@ -9,6 +9,6 @@ Current supported distributions include:
 For more information about a specific image please refer to its section:
 
 * [[CUDA]]
-* [[Caffe]]
+* [[NVIDIA Caffe]]
 * [[DIGITS]]
 * [[Third-party]]
