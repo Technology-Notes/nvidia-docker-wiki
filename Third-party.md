@@ -5,3 +5,4 @@ Here is a list of public Dockerfiles that are based on our CUDA and cuDNN images
 * [Caffe] (https://github.com/BVLC/caffe/tree/master/docker)
 * [CNTK] (https://github.com/Microsoft/CNTK/tree/master/Tools/docker)
 * [Theano] (https://github.com/nouiz/Theano-Docker)
+* [MXNet] (https://github.com/dmlc/mxnet/blob/master/docker)
