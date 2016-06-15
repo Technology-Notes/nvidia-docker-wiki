@@ -25,10 +25,11 @@ nvidia-docker run --name digits -d -p 8080:34448 -v /opt/mnist:/data/mnist nvidi
 If you want to persist jobs across multiple DIGITS containers, you can use a named volume. For DIGITS 3.0:
 ```sh
 # Run DIGITS storing jobs in a host volume named digits-jobs
+
+# For DIGITS 3.0
 nvidia-docker run --name digits -d -p 8080:34448 -v digits-jobs:/usr/share/digits/digits/jobs nvidia/digits
-```
-For DIGITS 3.3 and above:
-```
+
+# For DIGITS 3.3 and above
 nvidia-docker run --name digits -d -p 8080:34448 -v digits-jobs:/jobs nvidia/digits
 ```
 
