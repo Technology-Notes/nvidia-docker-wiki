@@ -15,11 +15,9 @@
   * [[Third-party]]
 * [[Building images locally]]
 
-**Getting Started**
+**Advanced topics**
 * [[Testing the samples]]
 * [[Deploy on Amazon EC2]]
-
-**Advanced topics**
 * [[Internals]]
   * [[NVIDIA driver]]
   * [[GPU isolation]]
