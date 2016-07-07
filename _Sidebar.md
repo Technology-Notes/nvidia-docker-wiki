@@ -1,4 +1,4 @@
-* [[Home]]
+[[Home]]
 
 **Introduction**
 * [[What is Docker?]]
