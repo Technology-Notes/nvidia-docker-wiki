@@ -1,4 +1,4 @@
-[[Home]]
+[Quick start](Home#quick-start)
 
 **Introduction**
 * [[What is Docker?]]
