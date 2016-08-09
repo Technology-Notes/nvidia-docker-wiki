@@ -24,4 +24,3 @@
   * [[NVIDIA driver]]
   * [[GPU isolation]]
   * [[Image inspection]]
-  * [[Remote deployment]]
