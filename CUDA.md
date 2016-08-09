@@ -43,16 +43,20 @@ Most of them are also available for other distributions. Selecting an alternativ
 Check the [tags reference](https://hub.docker.com/r/nvidia/cuda/tags/) for a given tag availability.
 
 **CUDA only**
-- [`7.5-runtime`, `runtime` (*ubuntu-14.04/cuda/7.5/runtime/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/runtime/Dockerfile)
-- [`7.5-devel`, `7.5`, `devel`, `latest` (*ubuntu-14.04/cuda/7.5/devel/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/devel/Dockerfile)
+- [`8.0-runtime`, `runtime` (*ubuntu-14.04/cuda/8.0/runtime/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/8.0/runtime/Dockerfile)
+- [`8.0-devel`, `8.0`, `devel`, `latest` (*ubuntu-14.04/cuda/8.0/devel/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/8.0/devel/Dockerfile)
+- [`7.5-runtime` (*ubuntu-14.04/cuda/7.5/runtime/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/runtime/Dockerfile)
+- [`7.5-devel`, `7.5` (*ubuntu-14.04/cuda/7.5/devel/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/devel/Dockerfile)
 - [`7.0-runtime` (*ubuntu-14.04/cuda/7.0/runtime/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.0/runtime/Dockerfile)
 - [`7.0-devel`, `7.0` (*ubuntu-14.04/cuda/7.0/devel/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.0/devel/Dockerfile)
 - [`6.5-runtime` (*ubuntu-14.04/cuda/6.5/runtime/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/6.5/runtime/Dockerfile)
 - [`6.5-devel`, `6.5` (*ubuntu-14.04/cuda/6.5/devel/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/6.5/devel/Dockerfile)
 
 **CUDA + cuDNN**
-- [`7.5-cudnn5-runtime`, `cudnn-runtime` (*ubuntu-14.04/cuda/7.5/runtime/cudnn5/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/runtime/cudnn5/Dockerfile)
-- [`7.5-cudnn5-devel`, `cudnn-devel`, `cudnn` (*ubuntu-14.04/cuda/7.5/devel/cudnn5/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/devel/cudnn5/Dockerfile)
+- [`8.0-cudnn5-runtime`, `cudnn-runtime` (*ubuntu-14.04/cuda/8.0/runtime/cudnn5/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/8.0/runtime/cudnn5/Dockerfile)
+- [`8.0-cudnn5-devel`, `cudnn-devel`, `cudnn` (*ubuntu-14.04/cuda/8.0/devel/cudnn5/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/8.0/devel/cudnn5/Dockerfile)
+- [`7.5-cudnn5-runtime` (*ubuntu-14.04/cuda/7.5/runtime/cudnn5/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/runtime/cudnn5/Dockerfile)
+- [`7.5-cudnn5-devel` (*ubuntu-14.04/cuda/7.5/devel/cudnn5/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/devel/cudnn5/Dockerfile)
 - [`7.5-cudnn4-runtime` (*ubuntu-14.04/cuda/7.5/runtime/cudnn4/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/runtime/cudnn4/Dockerfile)
 - [`7.5-cudnn4-devel` (*ubuntu-14.04/cuda/7.5/devel/cudnn4/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/devel/cudnn4/Dockerfile)
 - [`7.5-cudnn3-runtime` (*ubuntu-14.04/cuda/7.5/runtime/cudnn3/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/cuda/7.5/runtime/cudnn3/Dockerfile)
