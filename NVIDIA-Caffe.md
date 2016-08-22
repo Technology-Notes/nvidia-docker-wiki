@@ -18,4 +18,5 @@ nvidia-docker run --rm nvidia/caffe caffe train --solver <args>
 ```
 
 ## Tags available
-- [`0.14`, `latest` (*ubuntu-14.04/caffe/0.14/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/caffe/0.14/Dockerfile)
+- [`0.15`, `latest` (*ubuntu-14.04/caffe/0.15/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/caffe/0.14/Dockerfile)
+- [`0.14` (*ubuntu-14.04/caffe/0.14/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/caffe/0.14/Dockerfile)
