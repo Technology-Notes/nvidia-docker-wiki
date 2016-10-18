@@ -1,6 +1,6 @@
 ## Contents
 1. [Prerequisites](#prerequisites)
-1. [Installing from binaries](#installing-from-binaries)
+1. [Installing from binaries](#installing-from-binary-packages)
 1. [Building from sources](#building-from-sources)
 
 ## Prerequisites
