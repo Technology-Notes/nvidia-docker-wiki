@@ -18,11 +18,14 @@ The machine running the CUDA container **only requires the NVIDIA driver**, the 
 
 NVIDIA drivers are **backward-compatible** with CUDA toolkits versions
 
-CUDA toolkit version   | Minimum driver version  | Minimum GPU architecture
+CUDA toolkit version   | Driver version  | GPU architecture
 :---------------------:|:-----------------------:|:-------------------------:
   6.5                  | >= 340.29               | >= 2.0 (Fermi)
   7.0                  | >= 346.46               | >= 2.0 (Fermi)
   7.5                  | >= 352.39               | >= 2.0 (Fermi)
+  8.0                  | == 361.93               | P100
+  8.0                  | >= 367.48               | >= 2.0 (Fermi)
+
 
 ## Examples
 Take a look at the [samples section](Testing-the-samples) to find examples of Dockerfiles compiling simple CUDA applications.
