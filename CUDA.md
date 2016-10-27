@@ -23,7 +23,7 @@ CUDA toolkit version   | Driver version  | GPU architecture
   6.5                  | >= 340.29               | >= 2.0 (Fermi)
   7.0                  | >= 346.46               | >= 2.0 (Fermi)
   7.5                  | >= 352.39               | >= 2.0 (Fermi)
-  8.0                  | == 361.93               | 6.0 (P100)
+  8.0                  | == 361.93               | == 6.0 (P100)
   8.0                  | >= 367.48               | >= 2.0 (Fermi)
 
 
