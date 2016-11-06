@@ -56,6 +56,8 @@ If you don’t want to use the `nvidia-docker` wrapper, you can add the command-
 ```
 $ docker run --volume-driver=nvidia-docker --volume=nvidia_driver_361.48:/usr/local/nvidia:ro
 ````
+Please refer to the next section to understand how to discover and import the device files.
+
 To avoid using `--volume-driver` (since you can only use it once per command-line), you can create the named volume manually:
 ```
 $ docker volume create --name=nvidia_driver_361.48 -d nvidia-docker
