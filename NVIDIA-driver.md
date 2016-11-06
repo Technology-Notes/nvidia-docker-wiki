@@ -54,7 +54,7 @@ The `nvidia-docker` wrapper will automatically add the volume arguments to the c
 ## Alternatives
 If you don’t want to use the `nvidia-docker` wrapper, you can add the command-line arguments manually:
 ```
-$ docker run --volume-driver=nvidia-docker --volume=nvidia_driver_361.48:/usr/local/nvidia:ro --device [...]
+$ docker run --volume-driver=nvidia-docker --volume=nvidia_driver_361.48:/usr/local/nvidia:ro
 ````
 Please refer to the next section of the wiki to understand how to discover and import device files.
 
