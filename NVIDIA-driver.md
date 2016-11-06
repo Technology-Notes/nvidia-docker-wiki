@@ -33,7 +33,7 @@ This approach made the images non-portable, making image sharing impossible and 
 The NVIDIA driver supports multiple host OSes, there are multiple ways to install the driver (e.g. runfile or deb/rpm package) and the installer can also be customized. Across distributions, there is therefore no portable location for the driver files. The list of files to import can also depend on your driver version.
 
 ## nvidia-docker
-Our approach is equivalent to running `ldconfig -p` as shown above: we programatically parse the ldcache file (`/etc/ld.so.cache`) to discover the location of a predefined list of [ libraries](https://github.com/NVIDIA/nvidia-docker/blob/93bb65de7fc349e6de9f27abdaa75875f5572b17/tools/src/nvidia/volumes.go#L118-L168).
+Our approach is equivalent to running `ldconfig -p` as shown above: we programmatically parse the ldcache file (`/etc/ld.so.cache`) to discover the location of a predefined list of [ libraries](https://github.com/NVIDIA/nvidia-docker/blob/93bb65de7fc349e6de9f27abdaa75875f5572b17/tools/src/nvidia/volumes.go#L118-L168).
 Some libraries can be found multiple times on the system, and some of them must **not** be picked. For instance, this is true for OpenGL libraries which can be provided by multiple vendors. We have a [function](https://github.com/NVIDIA/nvidia-docker/blob/93bb65de7fc349e6de9f27abdaa75875f5572b17/tools/src/nvidia/volumes.go#L173-L211) to blacklist libraries that are known to be provided by multiple sources.
 
 Since those libraries can be scattered across the host filesystem, we create a Docker [named volume] (https://docs.docker.com/engine/userguide/containers/dockervolumes/) composed of hard links to the discovered libraries, we also have a copy fallback path if hard linking is not possible.
@@ -54,7 +54,7 @@ The `nvidia-docker` wrapper will automatically add the volume arguments to the c
 ## Alternatives
 If you don’t want to use the `nvidia-docker` wrapper, you can add the command-line arguments manually:
 ```
-$ docker run --volume-driver=nvidia-docker --volume=nvidia_driver_361.48:/usr/local/nvidia:ro
+$ docker run --volume-driver=nvidia-docker --volume=nvidia_driver_361.48:/usr/local/nvidia:ro --device [...]
 ````
 Please refer to the next section of the wiki to understand how to discover and import device files.
 
