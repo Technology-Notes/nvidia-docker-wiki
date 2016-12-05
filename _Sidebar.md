@@ -20,6 +20,7 @@
 **Advanced topics**
 * [[Testing the samples]]
 * [[Deploy on Amazon EC2]]
+* [[Deploy on Azure]]
 * [[Internals]]
   * [[NVIDIA driver]]
   * [[GPU isolation]]
