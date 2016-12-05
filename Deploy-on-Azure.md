@@ -27,8 +27,6 @@ The first time you run this command, you will be asked to open a webpage and ent
 (azure01) Microsoft Azure: To sign in, use a web browser to open the page https://aka.ms/devicelogin and enter the code ********* to authenticate.
 ```
 
-Note than N-Series VMs are not currently available in all regions.
-
 Once the provisioning is completed, we must install the NVIDIA driver and nvidia-docker.
 
 
