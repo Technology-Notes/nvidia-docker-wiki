@@ -35,7 +35,9 @@ Once the provisioning is completed, we must install the NVIDIA driver and nvidia
 docker-machine ssh azure01
 
 # Install official NVIDIA driver package
-sudo apt-get update && sudo apt-get install -y --no-install-recommends libcuda1-367 nvidia-modprobe
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+sudo sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64 /" > /etc/apt/sources.list.d/cuda.list'
+sudo apt-get update && sudo apt-get install -y --no-install-recommends cuda-drivers
 
 # Unload nouveau
 sudo rmmod nouveau
