@@ -38,6 +38,7 @@ Using [Docker machine](https://docs.docker.com/machine/install-machine/) and the
 docker-machine create --driver amazonec2 \
                       --amazonec2-region us-west-2 \
                       --amazonec2-zone b \
+                      --amazonec2-ami ami-a9d276c9 \
                       --amazonec2-instance-type g2.2xlarge \
                       --amazonec2-vpc-id vpc-*** \
                       --amazonec2-access-key AKI*** \
@@ -52,10 +53,10 @@ Note that if you create a custom [AMI](http://docs.aws.amazon.com/AWSEC2/latest/
 # SSH into the machine
 docker-machine ssh aws01
 
-# Install NVIDIA drivers 361.42
-sudo apt-get install --no-install-recommends -y gcc make libc-dev
-wget -P /tmp http://us.download.nvidia.com/XFree86/Linux-x86_64/361.42/NVIDIA-Linux-x86_64-361.42.run
-sudo sh /tmp/NVIDIA-Linux-x86_64-361.42.run --silent
+# Install official NVIDIA driver package
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+sudo sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64 /" > /etc/apt/sources.list.d/cuda.list'
+sudo apt-get update && sudo apt-get install -y --no-install-recommends cuda-drivers
 
 # Install nvidia-docker and nvidia-docker-plugin
 wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.0-rc.3/nvidia-docker_1.0.0.rc.3-1_amd64.deb
@@ -77,13 +78,13 @@ Using `nvidia-docker` [remotely](nvidia-docker#running-it-remotely) you can now 
 ```sh
 nvidia-docker run --rm nvidia/cuda nvidia-smi
      
-+------------------------------------------------------+                       
-| NVIDIA-SMI 361.42     Driver Version: 361.42         |                       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 367.57                 Driver Version: 367.57                    |
 |-------------------------------+----------------------+----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 |===============================+======================+======================|
 |   0  GRID K520           Off  | 0000:00:03.0     Off |                  N/A |
-| N/A   30C    P8    17W / 125W |     11MiB /  4095MiB |      0%      Default |
+| N/A   28C    P8    18W / 125W |      0MiB /  4036MiB |      0%      Default |
 +-------------------------------+----------------------+----------------------+
 ```
