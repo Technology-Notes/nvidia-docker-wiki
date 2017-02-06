@@ -15,7 +15,6 @@
   * [[NVIDIA Caffe]]
   * [[DIGITS]]
   * [[Third-party]]
-* [[Building images locally]]
 
 **Advanced topics**
 * [[Testing the samples]]
