@@ -34,7 +34,5 @@ nvidia-docker run --name digits -d -p 5000:34448 -v digits-jobs:/jobs nvidia/dig
 ```
 
 ## Tags available
-- [`4.0`, `latest` (*ubuntu-14.04/digits/4.0/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/digits/4.0/Dockerfile)
-- [`3.3` (*ubuntu-14.04/digits/3.3/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/digits/3.3/Dockerfile)
-- [`3.0` (*ubuntu-14.04/digits/3.0/Dockerfile*)](https://github.com/NVIDIA/nvidia-docker/blob/master/ubuntu-14.04/digits/3.0/Dockerfile)
+Check the [DockerHub](https://hub.docker.com/r/nvidia/digits/)
 
