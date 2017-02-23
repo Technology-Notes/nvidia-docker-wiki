@@ -29,8 +29,11 @@ If you want to persist jobs across multiple DIGITS containers, you can use a nam
 # For DIGITS 3.0
 nvidia-docker run --name digits -d -p 5000:34448 -v digits-jobs:/usr/share/digits/digits/jobs nvidia/digits
 
-# For DIGITS 3.3 and above
+# For DIGITS 3.3 and 4.0
 nvidia-docker run --name digits -d -p 5000:34448 -v digits-jobs:/jobs nvidia/digits
+
+# For DIGITS 5.0
+nvidia-docker run --name digits -d -p 5000:5000 -v digits-jobs:/jobs nvidia/digits
 ```
 
 ## Tags available
