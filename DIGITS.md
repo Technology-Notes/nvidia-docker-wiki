@@ -27,13 +27,13 @@ If you want to persist jobs across multiple DIGITS containers, you can use a nam
 # Run DIGITS storing jobs in a host volume named digits-jobs
 
 # For DIGITS 3.0
-nvidia-docker run --name digits -d -p 5000:34448 -v digits-jobs:/usr/share/digits/digits/jobs nvidia/digits
+nvidia-docker run --name digits -d -p 5000:34448 -v digits-jobs:/usr/share/digits/digits/jobs nvidia/digits:3.0
 
 # For DIGITS 3.3 and 4.0
-nvidia-docker run --name digits -d -p 5000:34448 -v digits-jobs:/jobs nvidia/digits
+nvidia-docker run --name digits -d -p 5000:34448 -v digits-jobs:/jobs nvidia/digits:4.0
 
 # For DIGITS 5.0
-nvidia-docker run --name digits -d -p 5000:5000 -v digits-jobs:/jobs nvidia/digits
+nvidia-docker run --name digits -d -p 5000:5000 -v digits-jobs:/jobs nvidia/digits:5.0
 ```
 
 ## Tags available
