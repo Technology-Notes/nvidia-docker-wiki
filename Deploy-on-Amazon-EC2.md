@@ -38,8 +38,8 @@ Using [Docker machine](https://docs.docker.com/machine/install-machine/) and the
 docker-machine create --driver amazonec2 \
                       --amazonec2-region us-west-2 \
                       --amazonec2-zone b \
-                      --amazonec2-ami ami-b7a114d7 \
-                      --amazonec2-instance-type g2.2xlarge \
+                      --amazonec2-ami ami-a58d0dc5 \
+                      --amazonec2-instance-type p2.xlarge \
                       --amazonec2-vpc-id vpc-*** \
                       --amazonec2-access-key AKI*** \
                       --amazonec2-secret-key *** \
@@ -50,6 +50,9 @@ Once the provisioning is completed, we install the NVIDIA drivers and NVIDIA Doc
 Note that if you create a custom [AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html), you could simply reuse it instead of doing what follows:
 
 ```sh
+# Restart the instance first, to be sure we are running the latest installed kernel
+docker-machine restart aws01
+
 # SSH into the machine
 docker-machine ssh aws01
 
