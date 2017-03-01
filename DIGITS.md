@@ -14,12 +14,12 @@ See the requirements for [CUDA](CUDA#requirements) since the DIGITS image is bas
 
 ```sh
 # Run DIGITS on host port 5000
-nvidia-docker run --name digits -d -p 5000:34448 nvidia/digits
+nvidia-docker run --name digits -d -p 5000:5000 nvidia/digits
 ```
 If you want to use a dataset stored in a host directory, you will need to import it inside the container using a volume:
 ```sh
 # Run DIGITS with the mnist dataset stored on the host under /opt/mnist
-nvidia-docker run --name digits -d -p 5000:34448 -v /opt/mnist:/data/mnist nvidia/digits
+nvidia-docker run --name digits -d -p 5000:5000 -v /opt/mnist:/data/mnist nvidia/digits
 ```
 
 If you want to persist jobs across multiple DIGITS containers, you can use a named volume. For DIGITS 3.0:
