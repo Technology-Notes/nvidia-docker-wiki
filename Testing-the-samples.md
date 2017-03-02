@@ -1,6 +1,11 @@
 A few examples of Dockerfiles are provided in the `samples/` folder, these images can be used to quickly test `nvidia-docker` on your machine. The samples are not available on the Docker Hub, you will need to build the images locally:
 ```sh
-for path in samples/ubuntu-16.04/*; do docker build -t sample:$(basename $path) $path; done
+docker build -t sample:bandwidthTest samples/ubuntu-16.04/bandwidthTest
+docker build -t sample:deviceQuery samples/ubuntu-16.04/deviceQuery
+docker build -t sample:matrixMulCUBLAS samples/ubuntu-16.04/matrixMulCUBLAS
+docker build -t sample:nbody samples/ubuntu-16.04/nbody
+docker build -t sample:nvidia-smi samples/ubuntu-16.04/nvidia-smi
+docker build -t sample:vectorAdd samples/ubuntu-16.04/vectorAdd
 ```
 
 Use `nvidia-docker` to test the samples:
