@@ -31,7 +31,7 @@ Under _Identity and Access Management > Users_
 
 ## GPU instance creation
 
-Before deploying GPU containers, we first need to provision an [EC2 G2 instance](https://aws.amazon.com/ec2/instance-types/#gpu).  
+Before deploying GPU containers, we first need to provision an [EC2 P2 instance](https://aws.amazon.com/ec2/instance-types/#gpu).  
 Using [Docker machine](https://docs.docker.com/machine/install-machine/) and the information above:
 
 ```sh
@@ -46,7 +46,7 @@ docker-machine create --driver amazonec2 \
                       aws01
 ```
 
-Once the provisioning is completed, we install the NVIDIA drivers and NVIDIA Docker on the newly created instance (Ubuntu by default).  
+Once the provisioning is completed, we install the NVIDIA drivers and NVIDIA Docker on the newly created instance (using a Ubuntu 16.04 AMI).  
 Note that if you create a custom [AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html), you could simply reuse it instead of doing what follows:
 
 ```sh
