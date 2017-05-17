@@ -38,7 +38,7 @@ Using [Docker machine](https://docs.docker.com/machine/install-machine/) and the
 docker-machine create --driver amazonec2 \
                       --amazonec2-region us-west-2 \
                       --amazonec2-zone b \
-                      --amazonec2-ami ami-a58d0dc5 \
+                      --amazonec2-ami ami-efd0428f \
                       --amazonec2-instance-type p2.xlarge \
                       --amazonec2-vpc-id vpc-*** \
                       --amazonec2-access-key AKI*** \
@@ -64,6 +64,10 @@ sudo apt-get update && sudo apt-get install -y --no-install-recommends linux-hea
 # Install nvidia-docker and nvidia-docker-plugin
 wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
 sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
+exit
+
+# Reboot to complete installation of the NVIDIA driver
+docker-machine restart aws01
 ```
 
 ## Container deployment
@@ -79,15 +83,22 @@ ssh-add ~/.docker/machine/machines/aws01/id_rsa
 Using `nvidia-docker` [remotely](nvidia-docker#running-it-remotely) you can now deploy your containers in the Amazon cloud:
 
 ```sh
-nvidia-docker run --rm nvidia/cuda nvidia-smi
-     
+$ nvidia-docker run --rm nvidia/cuda nvidia-smi
+Wed May 17 17:13:09 2017       
 +-----------------------------------------------------------------------------+
-| NVIDIA-SMI 367.57                 Driver Version: 367.57                    |
+| NVIDIA-SMI 375.51                 Driver Version: 375.51                    |
 |-------------------------------+----------------------+----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 |===============================+======================+======================|
-|   0  GRID K520           Off  | 0000:00:03.0     Off |                  N/A |
-| N/A   28C    P8    18W / 125W |      0MiB /  4036MiB |      0%      Default |
+|   0  Tesla K80           Off  | 0000:00:1E.0     Off |                    0 |
+| N/A   26C    P8    29W / 149W |      0MiB / 11439MiB |      0%      Default |
 +-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID  Type  Process name                               Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
 ```
