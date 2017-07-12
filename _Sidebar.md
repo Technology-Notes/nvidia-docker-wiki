@@ -2,7 +2,7 @@
 
 **Introduction**
 * [[What is Docker?]]
-* [Why NVIDIA Docker?](https://github.com/NVIDIA/nvidia-docker/wiki/Why-NVIDIA-Docker)
+* [[Motivation]]
 
 **Tools**
 * [[Installation]]
