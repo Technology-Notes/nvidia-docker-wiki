@@ -1,15 +1,13 @@
-# NVIDIA Docker
+# nvidia-docker
 
-This repository includes utilities to build and run NVIDIA Docker images.
+This repository includes a command-line Docker utility for NVIDIA GPUs.
 
 ![nvidia-gpu-docker](https://cloud.githubusercontent.com/assets/3028125/12213714/5b208976-b632-11e5-8406-38d379ec46aa.png)
-
-> Example of how CUDA integrates with Docker
 
 # Documentation
 
 The full documentation is available on the [repository wiki](https://github.com/NVIDIA/nvidia-docker/wiki).  
-A good place to start is to understand [why NVIDIA Docker](Why NVIDIA Docker?) is needed in the first place.
+A good place to start is to understand [why nvidia-docker](Motivation) is needed in the first place.
 
 
 # Quick start
