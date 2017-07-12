@@ -6,7 +6,7 @@
 
 ## Description
 
-`nvidia-docker-plugin` is a [Docker plugin](https://docs.docker.com/engine/extend/plugins/) designed to ease the process of deploying GPU-aware containers in heterogeneous environments. It acts as a daemon process, discovering host driver files and GPU devices and answers to volume mount requests originating from the Docker daemon.
+`nvidia-docker-plugin` is a [Docker Engine plugin](https://docs.docker.com/engine/extend/plugins/) designed to ease the process of deploying GPU-aware containers in heterogeneous environments. It acts as a daemon process, discovering host driver files and GPU devices and answers to volume mount requests originating from the Docker daemon.
 
 The plugin also provides a [REST API](#rest-api) that one can query to get GPU information remotely or generate Docker arguments given volume names and device numbers.
 
