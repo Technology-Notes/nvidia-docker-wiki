@@ -1,6 +1,6 @@
 ## Contents
 1. [Benefits of GPU containerization](#benefits-of-gpu-containerization)
-1. [Motivation](#motivation)
+1. [Background](#background)
 1. [Yet another Docker tool](#yet-another-docker-tool)
 
 ## Benefits of GPU containerization
@@ -15,7 +15,7 @@ Containerizing GPU applications provides several benefits, among them:
 * Enables "fire and forget" GPU applications
 * Facilitate collaboration
 
-## Motivation
+## Background
 Docker containers are often used to seamlessly deploy CPU-based applications on multiple machines. With this use case, Docker containers are both *hardware-agnostic* and *platform-agnostic*. This is obviously not the case when using NVIDIA GPUs since it is using specialized hardware and it requires the installation of the NVIDIA driver. As a result, Docker does not natively support NVIDIA GPUs with containers.
 
 To solve this problem, one of the early solutions that emerged was to fully reinstall the NVIDIA driver inside the container and then pass the character devices corresponding to the NVIDIA GPUs (e.g. `/dev/nvidia0`) when starting the container. However, this solution was brittle: the version of the host driver had to exactly match driver version installed in the container. The Docker images could not be shared and had to be built locally on each machine, defeating one of the main advantages of Docker.
