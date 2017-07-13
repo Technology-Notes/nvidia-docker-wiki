@@ -23,6 +23,6 @@ To solve this problem, one of the early solutions that emerged was to fully rein
 To make the Docker images portable while still leveraging NVIDIA GPUs, the solution used by `nvidia-docker` is to make the images agnostic of the NVIDIA driver. The required character devices and driver files are mounted when starting the container on the target machine.
 
 ## Yet another Docker tool
-Since this solution deals with nitty-gritty details and is quite different from the common Docker container use cases, we provide two tools for convenience: an [alternative Docker CLI](nvidia-docker) and a [Docker plugin](nvidia-docker-plugin). While we understand that using supplementary command line tools can be frustrating, we tried to stay as close as possible to the Docker philosophy.
+Since this solution deals with nitty-gritty details and is quite different from the common Docker container use cases, we provide two tools for convenience: an [alternative Docker CLI](nvidia-docker) and a [Docker Engine plugin](nvidia-docker-plugin). While we understand that using supplementary command line tools can be frustrating, we tried to stay as close as possible to the Docker philosophy.
 
 We hope that in the future Docker will enhance its plugin system to allow devices and parameters to be injected more easily in the command-line, rendering our tools obsolete.
