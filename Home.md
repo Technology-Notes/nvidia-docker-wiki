@@ -4,7 +4,6 @@
 
 # Documentation
 
-The full documentation is available on the [repository wiki](https://github.com/NVIDIA/nvidia-docker/wiki).  
 A good place to start is to understand [why nvidia-docker](Motivation) is needed in the first place.
 
 
