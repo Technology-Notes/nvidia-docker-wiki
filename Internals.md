@@ -10,7 +10,7 @@ $ docker run -ti --rm `curl -s http://localhost:3476/docker/cli` nvidia/cuda nvi
 ```
 However, this method will not be able to check if the image you are using is compatible with your installed driver, as described in the [image inspection](Image-inspection) subsection. [Remote deployment](Remote-deployment) will also be more challenging.
 
-Another option is to leverage our [`nvidia` package](https://github.com/NVIDIA/nvidia-docker/tree/master/tools/src/nvidia) written in the Go programming language. Go is currently the language of choice for containers, many projects should be able to interface with our package seamlessly.
+Another option is to leverage our [`nvidia` package](https://github.com/NVIDIA/nvidia-docker/tree/master/src/nvidia) written in the Go programming language. Go is currently the language of choice for containers, many projects should be able to interface with our package seamlessly.
 
 ## Topics
 In this section we provide details on the three major services provided by `nvidia-docker`:
