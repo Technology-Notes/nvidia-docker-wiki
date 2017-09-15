@@ -2,9 +2,10 @@ Most of the images presented here are available through the [NVIDIA public hub r
 Alternatively, one can build the images locally from the repository as described [here](Building images locally).
 
 Current supported distributions include:
+* Ubuntu 16.04 LTS
 * Ubuntu 14.04 LTS
-* CentOS 6 (partial)
-* CentOS 7 (partial)
+* CentOS 6
+* CentOS 7
 
 For more information about a specific image please refer to its section:
 
