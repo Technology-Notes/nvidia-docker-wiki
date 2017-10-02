@@ -6,10 +6,14 @@
 
 ## Description
 
-CUDA images come in two flavors and are available through the [NVIDIA public hub repository](https://hub.docker.com/r/nvidia/cuda).
+CUDA images come in three flavors and are available through the [NVIDIA public hub repository](https://hub.docker.com/r/nvidia/cuda).
 
-```runtime```: a lightweight image containing the bare minimum to deploy a pre-built application which uses CUDA.  
-```devel```: extends the runtime image by adding the compiler toolchain, the debugging tools and the development files for the standard CUDA libraries. Use this image to compile a CUDA application from source.
+* ```base```: starting from CUDA 9.0, contains the bare minimum (libcudart) to deploy a pre-built CUDA application.  
+Use this image if you want to manually select which CUDA packages you want to install. 
+* ```runtime```: extends the `base` image by adding all the shared libraries from the CUDA toolkit.  
+Use this image if you have a pre-built application using multiple CUDA libraries.
+* ```devel```: extends the `runtime` image by adding the compiler toolchain, the debugging tools, the headers and the static libraries.  
+Use this image to compile a CUDA application from sources.
 
 ## Requirements
 
