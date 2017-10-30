@@ -34,6 +34,9 @@ nvidia-docker run --name digits -d -p 5000:34448 -v digits-jobs:/jobs nvidia/dig
 
 # For DIGITS 5.0
 nvidia-docker run --name digits -d -p 5000:5000 -v digits-jobs:/jobs nvidia/digits:5.0
+
+# For DIGITS 6.0
+nvidia-docker run --name digits -d -p 5000:5000 -p 6006:6006 -v digits-jobs:/jobs nvidia/digits:6.0
 ```
 
 ## Tags available
