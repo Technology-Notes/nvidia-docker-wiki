@@ -1,3 +1,5 @@
+**This page hasn't been updated for 2.0 yet**
+
 ## Contents
 1. [Azure subscription ID](#azure-subscription-id)
 1. [GPU instance creation](#gpu-instance-creation)

@@ -1,26 +1,26 @@
-[Quick start](Home#quick-start)
+[FAQs](Home#frequently-asked-questions)
 
 **Introduction**
 * [[What is Docker?]]
 * [[Motivation]]
+* [[About version 2.0]]
 
-**Tools**
-* [[Installation]]
+**Version 2.0**
+* [Installation](Installation-(version-2.0))
+* [[Usage]]
+* [[Advanced topics]]
+
+**Version 1.0 (Deprecated)**
+* [Installation](Installation-(version-1.0))
 * [[nvidia-docker]]
 * [[nvidia-docker-plugin]]
+* [[Internals]]
 
-**Images**
-* [[List of available images]]
-  * [[CUDA]]
-  * [[NVIDIA Caffe]]
-  * [[DIGITS]]
-  * [[Third-party]]
+**Container images**
+* [[Docker Hub]]
+* [[NGC]]
+* [[Third-party]]
 
-**Advanced topics**
-* [[Testing the samples]]
+**Tutorials**
 * [[Deploy on Amazon EC2]]
 * [[Deploy on Azure]]
-* [[Internals]]
-  * [[NVIDIA driver]]
-  * [[GPU isolation]]
-  * [[Image inspection]]

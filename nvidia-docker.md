@@ -1,9 +1,3 @@
-## Contents
-1. [Description](#description)
-1. [GPU isolation](#gpu-isolation)
-1. [Running it locally](#running-it-locally)
-1. [Running it remotely](#running-it-remotely)
-
 ## Description
 
 `nvidia-docker` is a thin wrapper on top of `docker` and act as a drop-in replacement for the `docker` command line interface. This binary is provided as a convenience to automatically detect and setup GPU containers leveraging NVIDIA hardware. Refer to the [internals](https://github.com/NVIDIA/nvidia-docker/wiki/Internals) section if you don't intend to use it.

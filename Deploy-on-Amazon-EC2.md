@@ -1,3 +1,5 @@
+**This page hasn't been updated for 2.0 yet**
+
 ## Contents
 1. [Amazon AWS account setup](#amazon-aws-account-setup)
 1. [GPU instance creation](#gpu-instance-creation)
