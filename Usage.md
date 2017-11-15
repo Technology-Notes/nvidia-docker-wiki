@@ -20,10 +20,15 @@ docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all --rm debian:stretch nv
 #### Dockerfiles
 If the environment variables are set inside the Dockerfile, you don't need to set them on the `docker run` command-line.
 
-For instance, if you are creating a custom CUDA container from scratch: 
+For instance, if you are creating your own custom CUDA container, you should use the following:
 ```dockerfile
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 ```
 These environment variables are already set in our official images pushed to [Docker Hub](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/9.0/base/Dockerfile#L31-32).
 
+For a Dockerfile using cuvid, you could use the following:
+```dockerfile
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES compute,graphics,utility
+```
