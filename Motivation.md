@@ -5,7 +5,7 @@ Containerizing GPU applications provides several benefits, among them:
 * Ease of deployment
 * Isolation of individual devices
 * Run across heterogeneous driver/toolkit environments
-* Requires only the NVIDIA driver to be installed
+* Requires only the NVIDIA driver to be installed on the host
 * Facilitate collaboration: reproducible builds, reproducible performance, reproducible results.
 
 ## Background
