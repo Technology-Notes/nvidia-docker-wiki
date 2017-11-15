@@ -1,4 +1,4 @@
-We now recommend our users to transition to nvidia-docker 2.0. Version 1.0 is now deprecated.\
+We now recommend our users to transition to nvidia-docker 2.0. Version 1.0 is now being deprecated.\
 In order to ease the transition, a set of scripts is provided for [backward compatibility](https://github.com/NVIDIA/nvidia-docker/wiki/Advanced-topics#backward-compatibility).
 
 ## Differences with 1.0
