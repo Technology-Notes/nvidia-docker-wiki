@@ -1,9 +1,3 @@
-## Contents
-1. [Description](#description)
-1. [Requirements](#requirements)
-1. [Examples](#examples)
-1. [Tags available](#tags-available)
-
 ## Description
 Docker image based on [NVIDIA/caffe](https://github.com/NVIDIA/caffe), NVIDIA's fork of [BVLC/caffe](https://github.com/BVLC/caffe).
 
