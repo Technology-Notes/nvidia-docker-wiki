@@ -1,4 +1,9 @@
 [FAQs](Home#frequently-asked-questions)
+* [Setting up](Home#setting-up)
+* [Platform support](Home#platform-support)
+* [Container runtime](Home#container-runtime)
+* [Container images](Home#container-images)
+* [Ecosystem enablement](Home#ecosystem-enablement)
 
 **Introduction**
 * [[What is Docker?]]
