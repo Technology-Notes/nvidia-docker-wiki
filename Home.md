@@ -72,7 +72,7 @@ If you are a [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC) subscriber 
 
 #### How do I fix `unsatisfied condition: cuda >= X.Y`?
 Your CUDA container image is incompatible with your driver version.\
-Upgrade your driver or choose an [image tag](https://hub.docker.com/r/nvidia/cuda/) which is supported by your driver (see [CUDA requirements](https://github.com/NVIDIA/nvidia-docker/wiki/CUDA#requirements))
+Upgrade your driver or choose an [image tag](https://hub.docker.com/r/nvidia/cuda/) which is supported by your driver (see also [CUDA requirements](https://github.com/NVIDIA/nvidia-docker/wiki/CUDA#requirements))
 
 #### Do you support CUDA Multi Process Service (a.k.a. MPS)?
 No, MPS is not supported at the moment. However we plan on supporting this feature in the future, and [this issue](https://github.com/NVIDIA/nvidia-docker/issues/419) will be updated accordingly.
@@ -110,13 +110,13 @@ If you are running a Docker daemon inside a container: this case is untested.
 
 #### Why is my application inside the container slow to initialize?
 Your application was probably not compiled for the compute architecture of your GPU and thus the driver must [JIT](https://devblogs.nvidia.com/parallelforall/cuda-pro-tip-understand-fat-binaries-jit-caching/) all the CUDA kernels from PTX.
-In addition to a slow start, the JIT compiler might generate less efficient code than directly targeting your compute architecture (see [also](TODO)).
+In addition to a slow start, the JIT compiler might generate less efficient code than directly targeting your compute architecture (see also [performance impact](Home#does-it-have-a-performance-impact-on-my-gpu-workload)).
 
 #### Is the JIT cache shared between containers?
 No. You would have to handle this manually with [Docker volumes](https://docs.docker.com/engine/admin/volumes/volumes/).
 
 #### What is causing the CUDA `invalid device function` error?
-Your application was not compiled for the compute architecture of your GPU, and no PTX was generated during build time. Thus, JIT compiling is impossible (see [also](TODO)).
+Your application was not compiled for the compute architecture of your GPU, and no PTX was generated during build time. Thus, JIT compiling is impossible (see also [slow to initialize](Home#why-is-my-application-inside-the-container-slow-to-initialize)).
 
 #### Why do I get `Insufficient Permissions` for some `nvidia-smi` operations?
 Some device management operations require extra privileges (e.g. setting clocks frequency).\
@@ -134,13 +134,13 @@ No, Vulkan is not supported at the moment. However we plan on supporting this fe
 ## Container images
 
 #### What do I have install in my container images?
-Library dependencies vary from one application to another. In order to make things easier for developers, we provide a set of [official images](TODO) to base your images on.
+Library dependencies vary from one application to another. In order to make things easier for developers, we provide a set of [official images](Home#do-you-provide-official-docker-images) to base your images on.
 
 #### Do you provide official Docker images?
 Yes, container images are available on [Docker Hub](https://github.com/NVIDIA/nvidia-docker/wiki/Docker-Hub) and on the [NGC registry](https://github.com/NVIDIA/nvidia-docker/wiki/NGC).
 
 #### Can I use the GPU during a container build (i.e. `docker build`)?
-Yes, as long as you [configure your Docker daemon](https://github.com/NVIDIA/nvidia-docker/wiki/Advanced-topics#default-runtime) to use the `nvidia` runtime as the default, you will be able to have build-time GPU support. However, be aware that this can render your images non-portable (see [here](TODO)).
+Yes, as long as you [configure your Docker daemon](https://github.com/NVIDIA/nvidia-docker/wiki/Advanced-topics#default-runtime) to use the `nvidia` runtime as the default, you will be able to have build-time GPU support. However, be aware that this can render your images non-portable (see also [invalid device function](Home#what-is-causing-the-cuda-invalid-device-function-error)).
 
 #### Are my container images built for version 1.0 compatible with 2.0?
 Yes, for most cases. The main difference being that we don’t mount all driver libraries by default in 2.0. You might need to set the `CUDA_DRIVER_CAPABILITIES` environment variable in your Dockerfile or when starting the container. Check the documentation of [nvidia-container-runtime](https://github.com/nvidia/nvidia-container-runtime#environment-variables-oci-spec).
