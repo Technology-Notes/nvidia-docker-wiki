@@ -40,7 +40,7 @@ For your host distribution, the list of supported platforms is available [here](
 For your container images, both the [Docker Hub](https://github.com/NVIDIA/nvidia-docker/wiki/Docker-Hub) and [NGC registry](https://github.com/NVIDIA/nvidia-docker/wiki/NGC) images are officially supported.
 
 #### Do you support PowerPC64 (ppc64)?
-Not yet for 2.0 but are actively working with IBM on this.
+Not yet for 2.0 but we are actively working with IBM on this.
 
 #### How do I use this in on my Cloud service provider (e.g. AWS, Azure, GCP)?
 We have a tutorial for [AWS](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Amazon-EC2) and a tutorial for [Azure](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Azure).
@@ -104,7 +104,7 @@ You probably need to enable [persistence mode](http://docs.nvidia.com/deploy/dri
 The recommended way is to start the `nvidia-persistenced` daemon on your host.
 
 #### Can I use it with Docker-in-Docker (a.k.a. DinD)?
-If you are running a Docker client inside a container: simply mount the Docker socket proceed as usual.\
+If you are running a Docker client inside a container: simply mount the Docker socket and proceed as usual.\
 If you are running a Docker daemon inside a container: this case is untested.
 
 #### Why is my application inside the container slow to initialize?
@@ -151,7 +151,7 @@ However, do not set `LD_LIBRARY_PATH` to this folder, the stubs must not be used
 #### The official CUDA images are too big, what do I do?
 The `devel` [image tags](https://hub.docker.com/r/nvidia/cuda/) are large since the CUDA toolkit ships with many libraries, a compiler and various command-line tools.\
 As a general rule of thumb, you shouldn’t ship your application with its build-time dependencies. We recommend to use [multi-stage builds](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) for this purpose. Your final container image should use our `runtime` or `base` images.\
-Also, as of CUDA 9.0 we now ship a `base` [image tag](https://hub.docker.com/r/nvidia/cuda/) which bundles the strict minimum of dependencies.
+As of CUDA 9.0 we now ship a `base` [image tag](https://hub.docker.com/r/nvidia/cuda/) which bundles the strict minimum of dependencies.
 
 ## Ecosystem enablement
 
