@@ -20,6 +20,9 @@ When no packages are available, you should use an official ["runfile"](http://ww
 #### Can I use 2.0 and 1.0 side-by-side?
 Yes, but packages `nvidia-docker2` and `nvidia-docker` conflict. You need to install [nvidia-container-runtime]( https://github.com/nvidia/nvidia-container-runtime#installation) instead of `nvidia-docker2` and register the new runtime manually.
 
+#### Why do I get the error `Unknown runtime specified nvidia`?
+Make sure the runtime was [registered](Frequently-Asked-Questions#how-do-i-register-the-new-runtime-to-the-docker-daemon) to `dockerd`. You also need to reload the configuration of the Docker daemon.
+
 ## Platform support
 
 #### Is macOS supported?
