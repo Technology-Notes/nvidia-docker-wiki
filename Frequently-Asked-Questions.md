@@ -10,6 +10,13 @@ Refer to the documentation of [nvidia-container-runtime](https://github.com/nvid
 * The package provided by Canonical: `docker.io`.
 * The package provided by Red Hat: `docker`.
 
+#### How do I install 2.0 if I'm not using the latest Docker version?
+You must pin the versions of the `nvidia-docker2` and `nvidia-container-runtime` packages when installing, for instance:
+```
+sudo apt-get install -y nvidia-docker2=2.0.1+docker1.12.6-1 nvidia-container-runtime=1.1.0+docker1.12.6-1
+```
+Use `apt-cache madison nvidia-docker2 nvidia-container-runtime` or `yum search --showduplicates nvidia-docker2 nvidia-container-runtime` to list the available package versions.
+
 #### What is the minimum supported Docker version?
 Docker 1.12 which adds support for [custom container runtimes](https://github.com/moby/moby/pull/22983).
 
