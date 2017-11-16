@@ -50,7 +50,7 @@ Alternatively, you can leverage [NGC](https://github.com/NVIDIA/nvidia-docker/wi
 ## Container Runtime
 
 #### Does it have a performance impact on my GPU workload? 
-No, usually the impact should be in the order of magnitude less than 1% and hardly noticeable.\
+No, usually the impact should be in the order of less than 1% and hardly noticeable.\
 However be aware of the following (list non exhaustive):
 * _GPU topology and CPU affinity_ \
 You can query it using `nvidia-smi topo` and use [Docker CPU sets](https://docs.docker.com/engine/admin/resource_constraints/#cpu) to pin CPU cores.
