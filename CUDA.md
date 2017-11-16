@@ -37,10 +37,10 @@ Take a look at the [samples section](Testing-the-samples) to find examples of Do
 
 ```sh
 # Running an interactive CUDA session isolating the first GPU
-NV_GPU=0 nvidia-docker run -ti --rm nvidia/cuda
+docker run -ti --rm --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=0 nvidia/cuda
 
 # Querying the CUDA 7.5 compiler version
-nvidia-docker run --rm nvidia/cuda:7.5-devel nvcc --version
+docker run --rm --runtime=nvidia nvidia/cuda:7.5-devel nvcc --version
 ```
 
 ## Tags available
