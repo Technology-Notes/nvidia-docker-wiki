@@ -146,7 +146,7 @@ Yes, as long as you [configure your Docker daemon](https://github.com/NVIDIA/nvi
 Yes, for most cases. The main difference being that we don’t mount all driver libraries by default in 2.0. You might need to set the `CUDA_DRIVER_CAPABILITIES` environment variable in your Dockerfile or when starting the container. Check the documentation of [nvidia-container-runtime](https://github.com/nvidia/nvidia-container-runtime#environment-variables-oci-spec).
 
 #### How do I link against driver APIs at build time (e.g. `libcuda.so` or `libnvidia-ml.so`)?
-Use the library stubs provided in `/usr/local/cuda/lib64/stubs/`. Note that our official images already take care of setting [`LIBRARY_PATH`](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/9.0/devel/Dockerfile#L12).
+Use the library stubs provided in `/usr/local/cuda/lib64/stubs/`. Our official images already take care of setting [`LIBRARY_PATH`](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/9.0/devel/Dockerfile#L12).
 However, do not set `LD_LIBRARY_PATH` to this folder, the stubs must not be used at runtime.
 
 #### The official CUDA images are too big, what do I do?
