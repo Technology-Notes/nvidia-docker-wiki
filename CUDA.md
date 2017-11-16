@@ -1,9 +1,3 @@
-## Contents
-1. [Description](#description)
-1. [Requirements](#requirements)
-1. [Examples](#examples)
-1. [Tags available](#tags-available)
-
 ## Description
 
 CUDA images come in three flavors and are available through the [NVIDIA public hub repository](https://hub.docker.com/r/nvidia/cuda).
@@ -33,7 +27,6 @@ CUDA toolkit version   | Driver version  | GPU architecture
 
 
 ## Examples
-Take a look at the [samples section](Testing-the-samples) to find examples of Dockerfiles compiling simple CUDA applications.
 
 ```sh
 # Running an interactive CUDA session isolating the first GPU
