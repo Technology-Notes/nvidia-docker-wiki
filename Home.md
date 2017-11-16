@@ -6,6 +6,7 @@ Select the topic you want to learn about from the list on the right.
 
 * [How do I register the new runtime to the Docker daemon?](Frequently-Asked-Questions#how-do-i-register-the-new-runtime-to-the-docker-daemon)
 * [Which Docker packages are supported?](Frequently-Asked-Questions#which-docker-packages-are-supported)
+* [How do I install 2.0 if I'm not using the latest Docker version?](Frequently-Asked-Questions#how-do-i-install-20-if-im-not-using-the-latest-docker-version)
 * [What is the minimum supported Docker version?](Frequently-Asked-Questions#what-is-the-minimum-supported-docker-version)
 * [How do I install the NVIDIA driver?](Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver)
 * [Can I use 2.0 and 1.0 side-by-side?](Frequently-Asked-Questions#can-i-use-20-and-10-side-by-side)
