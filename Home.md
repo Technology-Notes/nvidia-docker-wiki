@@ -9,6 +9,7 @@ Select the topic you want to learn about from the list on the right.
 * [What is the minimum supported Docker version?](Frequently-Asked-Questions#what-is-the-minimum-supported-docker-version)
 * [How do I install the NVIDIA driver?](Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver)
 * [Can I use 2.0 and 1.0 side-by-side?](Frequently-Asked-Questions#can-i-use-20-and-10-side-by-side)
+* [Why do I get the error `Unknown runtime specified nvidia`?](Frequently-Asked-Questions#why-do-i-get-the-error-unknown-runtime-specified-nvidia)
 
 ### Platform support
 
