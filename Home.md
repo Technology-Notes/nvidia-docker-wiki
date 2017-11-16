@@ -78,7 +78,7 @@ Upgrade your driver or choose an [image tag](https://hub.docker.com/r/nvidia/cud
 No, MPS is not supported at the moment. However we plan on supporting this feature in the future, and [this issue](https://github.com/NVIDIA/nvidia-docker/issues/419) will be updated accordingly.
 
 #### Do you support running a GPU-accelerated X server inside the container?
-No, running a X server inside the container is not supported at the moment and there is no plan to support it in the near future (see also [[OpenGL]]).
+No, running a X server inside the container is not supported at the moment and there is no plan to support it in the near future (see also [OpenGL support](Home#is-opengl-supported)).
 
 #### I have multiple GPU devices, how can I isolate them between my containers?
 GPU isolation is achieved through a container environment variable called `NVIDIA_VISIBLE_DEVICES`.\
