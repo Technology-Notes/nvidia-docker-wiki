@@ -30,5 +30,5 @@ These environment variables are already set in our official images pushed to [Do
 For a Dockerfile using the NVIDIA Video Codec SDK, you should use:
 ```dockerfile
 ENV NVIDIA_VISIBLE_DEVICES all
-ENV NVIDIA_DRIVER_CAPABILITIES compute,graphics,utility
+ENV NVIDIA_DRIVER_CAPABILITIES compute,video,utility
 ```
