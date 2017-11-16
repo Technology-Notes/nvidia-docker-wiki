@@ -159,7 +159,7 @@ As of CUDA 9.0 we now ship a `base` [image tag](https://hub.docker.com/r/nvidia/
 Not currently, support for Swarmkit is still being worked on in the upstream Moby project. You can track our progress [here](https://github.com/moby/moby/issues/33439).
 
 #### Do you support Docker Compose?
-Yes, as long as you [configure your Docker daemon](https://github.com/NVIDIA/nvidia-docker/wiki/Advanced-topics#default-runtime) to use the `nvidia` runtime as the default, you will be able to use `docker-compose` with GPU support.
+Yes, as long as you [configure your Docker daemon](https://github.com/NVIDIA/nvidia-docker/wiki/Advanced-topics#default-runtime) to use the `nvidia` runtime as the default, you will be able to use `docker-compose` with GPU support. There is however an [issue](https://github.com/docker/compose/issues/5360) to relax this requirement.
 
 #### Do you support Kubernetes?
 Since Kubernetes 1.8, the recommended way is to use our official [device plugin](https://github.com/NVIDIA/k8s-device-plugin). Note that this is still alpha support.
