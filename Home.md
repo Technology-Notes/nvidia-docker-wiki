@@ -133,7 +133,7 @@ No, Vulkan is not supported at the moment. However we plan on supporting this fe
 
 ## Container images
 
-#### What do I have install in my container images?
+#### What do I have to install in my container images?
 Library dependencies vary from one application to another. In order to make things easier for developers, we provide a set of [official images](Home#do-you-provide-official-docker-images) to base your images on.
 
 #### Do you provide official Docker images?
