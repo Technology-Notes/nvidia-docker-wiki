@@ -3,3 +3,5 @@ From the [official product page](https://www.nvidia.com/en-us/gpu-cloud/):
 
 Optimized container images for deep learning are available on the NVIDIA container registry:
 https://www.nvidia.com/en-us/gpu-cloud/deep-learning-containers/
+
+For any NGC related issue, please use the [devtalk forums](https://devtalk.nvidia.com/default/board/200/nvidia-gpu-cloud-ngc-users/).
