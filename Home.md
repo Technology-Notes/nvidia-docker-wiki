@@ -1,4 +1,5 @@
-# Setting up
+#Frequently Asked Questions
+## Setting up
 
 #### How do I register the new runtime to the Docker daemon?
 Refer to the documentation of [nvidia-container-runtime](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup)
@@ -17,7 +18,7 @@ Docker 1.12 which adds support for [custom container runtimes](https://github.co
 The recommended way is to use your [package manager](http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-installation) and install the `cuda-drivers` package (or equivalent).\
 When no packages are available, you should use an official [“runfile”](http://www.nvidia.com/object/unix.html) 
 
-# Platform support
+## Platform support
 
 #### Is macOS supported?
 No, we do not support macOS (regardless of the version), however you can use the native macOS Docker client to deploy your containers remotely (refer to the [dockerd documentation](https://docs.docker.com/engine/reference/commandline/dockerd/#description)).
@@ -47,7 +48,7 @@ We have a tutorial for [AWS](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy
 They haven’t been updated for 2.0 yet but we are working on it and we plan to release a similar tutorial for GCP soon.\
 Alternatively, you can leverage [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC) to deploy optimized container images on AWS.
 
-# Container Runtime
+## Container Runtime
 
 #### Does it have a performance impact on my GPU workload? 
 No, usually the impact should be in the order of magnitude less than 1% and hardly noticeable.\
@@ -130,7 +131,7 @@ No, OpenCL is not supported at the moment. However we plan on supporting this fe
 #### Is Vulkan supported?
 No, Vulkan is not supported at the moment. However we plan on supporting this feature in the future.
 
-# Container images
+## Container images
 
 #### What do I have install in my container images?
 Library dependencies vary from one application to another. In order to make things easier for developers, we provide a set of [official images](TODO) to base your images on.
@@ -153,7 +154,7 @@ The `devel` [image tags](https://hub.docker.com/r/nvidia/cuda/) are large since 
 As a general rule of thumb, you shouldn’t ship your application with its build-time dependencies. We recommend to use [multi-stage builds](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) for this purpose. Your final container image should use our `runtime` or `base` images.\
 Also, as of CUDA 9.0 we now ship a `base` [image tag](https://hub.docker.com/r/nvidia/cuda/) which bundles the strict minimum of dependencies.
 
-# Ecosystem enablement
+## Ecosystem enablement
 
 #### Do you support Docker Swarm mode?
 Not currently, support for Swarmkit is still being worked on in the upstream Moby project. You can track our progress [here](https://github.com/moby/moby/issues/33439).
