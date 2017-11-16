@@ -1,9 +1,9 @@
-[FAQs](Home#frequently-asked-questions)
-* [Setting up](Home#setting-up)
-* [Platform support](Home#platform-support)
-* [Container runtime](Home#container-runtime)
-* [Container images](Home#container-images)
-* [Ecosystem enablement](Home#ecosystem-enablement)
+[**Frequently asked questions**](Home)
+* [Setting up](Frequently-Asked-Questions#setting-up)
+* [Platform support](Frequently-Asked-Questions#platform-support)
+* [Container runtime](Frequently-Asked-Questions#container-runtime)
+* [Container images](Frequently-Asked-Questions#container-images)
+* [Ecosystem enablement](Frequently-Asked-Questions#ecosystem-enablement)
 
 **Introduction**
 * [[What is Docker?]]
