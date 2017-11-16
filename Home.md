@@ -16,7 +16,7 @@ Docker 1.12 which adds support for [custom container runtimes](https://github.co
 
 #### How do I install the NVIDIA driver?
 The recommended way is to use your [package manager](http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-installation) and install the `cuda-drivers` package (or equivalent).\
-When no packages are available, you should use an official [“runfile”](http://www.nvidia.com/object/unix.html) 
+When no packages are available, you should use an official [“runfile”](http://www.nvidia.com/object/unix.html).
 
 ## Platform support
 
