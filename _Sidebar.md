@@ -14,6 +14,7 @@
 * [Installation](Installation-(version-2.0))
 * [[Usage]]
 * [[Advanced topics]]
+* [[Troubleshooting]]
 
 **Version 1.0 (Deprecated)**
 * [Installation](Installation-(version-1.0))
