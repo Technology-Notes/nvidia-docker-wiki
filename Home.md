@@ -47,7 +47,7 @@ Select the topic you want to learn about from the list on the right.
 * [What do I have to install in my container images?](Frequently-Asked-Questions#what-do-i-have-to-install-in-my-container-images)
 * [Do you provide official Docker images?](Frequently-Asked-Questions#do-you-provide-official-docker-images)
 * [Can I use the GPU during a container build (i.e. `docker-build`)?](Frequently-Asked-Questions#can-i-use-the-gpu-during-a-container-build-ie-docker-build)
-* [Are my container images built for version 1.0 compatible with 2.0?](Frequently-Asked-Questions#are-my-container-images-built-for-version--compatible-with-)
+* [Are my container images built for version 1.0 compatible with 2.0?](Frequently-Asked-Questions#are-my-container-images-built-for-version-10-compatible-with-20)
 * [How do I link against driver APIs at build time (e.g. `libcuda.so` or `libnvidia-ml.so`)?](Frequently-Asked-Questions#how-do-i-link-against-driver-apis-at-build-time-eg-libcudaso-or-libnvidia-mlso)
 * [The official CUDA images are too big, what do I do?](Frequently-Asked-Questions#the-official-cuda-images-are-too-big-what-do-i-do)
 
