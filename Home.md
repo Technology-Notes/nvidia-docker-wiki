@@ -123,7 +123,7 @@ Some device management operations require extra privileges (e.g. setting clocks 
 After learning about the security implications of doing so, you can add extra [capabilities](https://docs.docker.com/engine/security/security/#linux-kernel-capabilities) to your container using `--cap-add` on the command-line (`--cap-add=SYS_ADMIN` will allow most operations).
 
 #### Can I profile and debug my GPU code inside a container?
-Yes but as stated above, you might need to extra privileges, meaning extra [capabilities](https://docs.docker.com/engine/security/security/#linux-kernel-capabilities) like `CAP_SYS_PTRACE` or tweak the [seccomp profile](https://docs.docker.com/engine/security/seccomp/) used by Docker to allow certain syscalls.
+Yes but as stated above, you might need extra privileges, meaning extra [capabilities](https://docs.docker.com/engine/security/security/#linux-kernel-capabilities) like `CAP_SYS_PTRACE` or tweak the [seccomp profile](https://docs.docker.com/engine/security/seccomp/) used by Docker to allow certain syscalls.
 
 #### Is OpenCL supported?
 No, OpenCL is not supported at the moment. However we plan on supporting this feature in the future.
