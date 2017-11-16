@@ -22,7 +22,7 @@ Select the topic you want to learn about from the list on the right.
 
 ### Container runtime
 
-* [Does it have a performance impact on my GPU workload?](Frequently-Asked-Questions#does-it-have-a-performance-impact-on-my-gpu-workload-)
+* [Does it have a performance impact on my GPU workload?](Frequently-Asked-Questions#does-it-have-a-performance-impact-on-my-gpu-workload)
 * [Is OpenGL supported?](Frequently-Asked-Questions#is-opengl-supported)
 * [How do I fix `unsatisfied condition: cuda >= X.Y`?](Frequently-Asked-Questions#how-do-i-fix-unsatisfied-condition-cuda--xy)
 * [Do you support CUDA Multi Process Service (a.k.a. MPS)](Frequently-Asked-Questions#do-you-support-cuda-multi-process-service-aka-mps)
@@ -32,7 +32,7 @@ Select the topic you want to learn about from the list on the right.
 * [Can I share a GPU between multiple containers?](Frequently-Asked-Questions#can-i-share-a-gpu-between-multiple-containers)
 * [Can I limit the GPU resources (e.g. bandwidth, memory, CUDA cores) taken by a container?](Frequently-Asked-Questions#can-i-limit-the-gpu-resources-eg-bandwidth-memory-cuda-cores-taken-by-a-container)
 * [Can I enforce exclusive access for a GPU?](Frequently-Asked-Questions#can-i-enforce-exclusive-access-for-a-gpu)
-* [Why is my container slow to start with 2.0?](Frequently-Asked-Questions#why-is-my-container-slow-to-start-with-)
+* [Why is my container slow to start with 2.0?](Frequently-Asked-Questions#why-is-my-container-slow-to-start-with-20)
 * [Can I use it with Docker-in-Docker (a.k.a. DinD)?](Frequently-Asked-Questions#can-i-use-it-with-docker-in-docker-aka-dind)
 * [Why is my application inside the container slow to initialize?](Frequently-Asked-Questions#why-is-my-application-inside-the-container-slow-to-initialize)
 * [Is the JIT cache shared between containers?](Frequently-Asked-Questions#is-the-jit-cache-shared-between-containers)
