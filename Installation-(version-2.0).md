@@ -49,6 +49,13 @@ sudo yum install nvidia-docker2
 sudo pkill -SIGHUP dockerd
 ```
 
+#### Older versions of Docker
+You must pin the versions of both `nvidia-docker2` and `nvidia-container-runtime` when installing, for instance:
+```
+sudo apt-get install -y nvidia-docker2=2.0.1+docker1.12.6-1 nvidia-container-runtime=1.1.0+docker1.12.6-1
+```
+Use `apt-cache madison nvidia-docker2 nvidia-container-runtime` or `yum search --showduplicates nvidia-docker2 nvidia-container-runtime` to list the available versions.
+
 ## Basic usage
 nvidia-docker registers a new container runtime to the Docker daemon.  
 You must select the `nvidia` runtime when using `docker run`:
