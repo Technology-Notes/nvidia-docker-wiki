@@ -30,6 +30,9 @@ Yes, but packages `nvidia-docker2` and `nvidia-docker` conflict. You need to ins
 #### Why do I get the error `Unknown runtime specified nvidia`?
 Make sure the runtime was [registered](Frequently-Asked-Questions#how-do-i-register-the-new-runtime-to-the-docker-daemon) to `dockerd`. You also need to reload the configuration of the Docker daemon.
 
+#### Why do I get the error `flag provided but not defined: -console`?
+Your version of `nvidia-container-runtime` probably doesn't match your version of Docker. You need to [pin the version](Frequently-Asked-Questions#how-do-i-install-20-if-im-not-using-the-latest-docker-version) of `nvidia-container-runtime` when installing the package.
+
 ## Platform support
 
 #### Is macOS supported?
