@@ -30,7 +30,7 @@ sudo yum remove nvidia-docker
 
 ## Installing version 2.0
 
-**If you have a custom `/etc/docker/daemon.json`, the `nvidia-docker2` package will override it.**  
+**If you have a custom `/etc/docker/daemon.json`, the `nvidia-docker2` package might override it.**  
 
 #### Ubuntu distributions
 
