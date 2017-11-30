@@ -33,6 +33,12 @@ Make sure the runtime was [registered](Frequently-Asked-Questions#how-do-i-regis
 #### Why do I get the error `flag provided but not defined: -console`?
 Your version of `nvidia-container-runtime` probably doesn't match your version of Docker. You need to [pin the version](Frequently-Asked-Questions#how-do-i-install-20-if-im-not-using-the-latest-docker-version) of `nvidia-container-runtime` when installing the package.
 
+#### Why do I get the error `Depends: docker [...] but it is not installable` or `nothing provides docker [...]`
+This issue usually occurs in the following circumstances:
+1. Docker is not installed on your machine and/or the official Docker package repository hasn't been set up (see also [prerequisites](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)#prerequisites)).
+2. Docker is installed or is about to be upgraded and its version is not supported by NVIDIA Docker (see also [supported Docker packages](Frequently-Asked-Questions#which-docker-packages-are-supported)).
+3. Docker is installed and its version supported, but it isn't the latest version available on the Docker package repository. In this case, package pinning is required (see also [not the latest Docker version](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-20-if-im-not-using-the-latest-docker-version) and [older version of Docker](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)#older-versions-of-docker)).
+
 ## Platform support
 
 #### Is macOS supported?
