@@ -30,6 +30,8 @@ sudo yum remove nvidia-docker
 
 ## Installing version 2.0
 
+**Make sure you have installed the [NVIDIA driver](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver) and a [supported version](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#which-docker-packages-are-supported) of [Docker](https://docs.docker.com/engine/installation/) for your distribution (see [prerequisites](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)#prerequisites)).**
+
 **If you have a custom `/etc/docker/daemon.json`, the `nvidia-docker2` package might override it.**  
 
 #### Ubuntu distributions
