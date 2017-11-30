@@ -12,7 +12,7 @@ Select the topic you want to learn about from the list on the right.
 * [Can I use 2.0 and 1.0 side-by-side?](Frequently-Asked-Questions#can-i-use-20-and-10-side-by-side)
 * [Why do I get the error `Unknown runtime specified nvidia`?](Frequently-Asked-Questions#why-do-i-get-the-error-unknown-runtime-specified-nvidia)
 * [Why do I get the error `flag provided but not defined: -console`?](Frequently-Asked-Questions#why-do-i-get-the-error-flag-provided-but-not-defined--console)
-* [Why do I get the error `Depends: docker [...] but it is not installable` or `nothing provides docker [...]`](Frequently-Asked-Questions#why-do-i-get-the-error-depends-docker--but-it-is-not-installable-or-nothing-provides-docker-)
+* [Why do I get the error `Depends: docker [...] but it is not installable` or `nothing provides docker [...]`](Frequently-Asked-Questions#why-do-i-get-the-error-depends-docker--but-it-is-not-installable-or-nothing-provides-docker-)?
 
 ### Platform support
 
