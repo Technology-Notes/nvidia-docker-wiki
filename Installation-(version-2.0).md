@@ -58,6 +58,9 @@ sudo apt-get install -y nvidia-docker2=2.0.1+docker1.12.6-1 nvidia-container-run
 ```
 Use `apt-cache madison nvidia-docker2 nvidia-container-runtime` or `yum search --showduplicates nvidia-docker2 nvidia-container-runtime` to list the available versions.
 
+#### Other distributions and architectures
+Install the repository for your distribution by following the instructions [here](http://nvidia.github.io/nvidia-docker/).
+
 ## Basic usage
 nvidia-docker registers a new container runtime to the Docker daemon.  
 You must select the `nvidia` runtime when using `docker run`:
