@@ -13,7 +13,7 @@ Refer to the documentation of [nvidia-container-runtime](https://github.com/nvid
 #### How do I install 2.0 if I'm not using the latest Docker version?
 You must pin the versions of both `nvidia-docker2` and `nvidia-container-runtime` when installing, for instance:
 ```
-sudo apt-get install -y nvidia-docker2=2.0.1+docker1.12.6-1 nvidia-container-runtime=1.1.0+docker1.12.6-1
+sudo apt-get install -y nvidia-docker2=2.0.2+docker1.12.6-1 nvidia-container-runtime=1.1.1+docker1.12.6-1
 ```
 Use `apt-cache madison nvidia-docker2 nvidia-container-runtime` or `yum search --showduplicates nvidia-docker2 nvidia-container-runtime` to list the available versions.
 
