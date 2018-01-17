@@ -147,7 +147,7 @@ After learning about the security implications of doing so, you can add extra [c
 Yes but as stated above, you might need extra privileges, meaning extra [capabilities](https://docs.docker.com/engine/security/security/#linux-kernel-capabilities) like `CAP_SYS_PTRACE` or tweak the [seccomp profile](https://docs.docker.com/engine/security/seccomp/) used by Docker to allow certain syscalls.
 
 #### Is OpenCL supported?
-No, OpenCL is not supported at the moment. However we plan on supporting this feature in the future.
+Yes, we now provide images on [DockerHub](https://hub.docker.com/r/nvidia/opencl/).
 
 #### Is Vulkan supported?
 No, Vulkan is not supported at the moment. However we plan on supporting this feature in the future.
