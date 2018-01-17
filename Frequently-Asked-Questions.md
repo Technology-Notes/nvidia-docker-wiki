@@ -87,8 +87,8 @@ In rare cases, you may notice than some kernel subsystems induce overhead.\
 This will likely depend on your kernel version and can include things like: cgroups, LSMs, seccomp filters, netfilter...
 
 #### Is OpenGL supported?
-No, OpenGL is not supported at the moment and there is no plan to support OpenGL+GLX in the near future.\
-OpenGL+EGL however will be supported and [this issue](https://github.com/NVIDIA/nvidia-docker/issues/11) will be updated accordingly.\
+Yes, [EGL](https://devblogs.nvidia.com/parallelforall/egl-eye-opengl-visualization-without-x-server/) is supported for headless rendering, but this is a **beta** feature. There is no plan to support GLX in the near future.\
+Images are available at [`nvidia/opengl`](https://hub.docker.com/r/nvidia/opengl/). If you need CUDA+OpenGL, use [`nvidia/cudagl`](https://hub.docker.com/r/nvidia/cudagl/).\
 If you are a [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC) subscriber and require GLX for your workflow, please fill out a [feature request](https://devtalk.nvidia.com/default/board/221/feature-requests/) for support consideration.
 
 #### How do I fix `unsatisfied condition: cuda >= X.Y`?
