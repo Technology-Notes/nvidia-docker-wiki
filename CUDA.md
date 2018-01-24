@@ -24,6 +24,7 @@ CUDA toolkit version   | Driver version  | GPU architecture
   8.0                  | == 361.93 or >= 375.51  | == 6.0 (P100)
   8.0                  | >= 367.48               | >= 2.0 (Fermi)
   9.0                  | >= 384.81               | >= 3.0 (Kepler)
+  9.1                  | >= 387.26               | >= 3.0 (Kepler)
 
 
 ## Examples
