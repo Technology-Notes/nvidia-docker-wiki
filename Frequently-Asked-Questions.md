@@ -62,7 +62,12 @@ For your host distribution, the list of supported platforms is available [here](
 For your container images, both the [Docker Hub](https://github.com/NVIDIA/nvidia-docker/wiki/Docker-Hub) and [NGC registry](https://github.com/NVIDIA/nvidia-docker/wiki/NGC) images are officially supported.
 
 #### Do you support PowerPC64 (ppc64)?
-Not yet for 2.0 but we are actively working with IBM on this.
+Yes, check the support matrix for each project:
+- https://nvidia.github.io/nvidia-docker
+- https://nvidia.github.io/nvidia-container-runtime
+- https://nvidia.github.io/libnvidia-container
+
+Notably, if you use CentOS/RHEL on ppc64, you need to register the `nvidia` runtime [manually](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup).
 
 #### How do I use this in on my Cloud service provider (e.g. AWS, Azure, GCP)?
 We have a tutorial for [AWS](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Amazon-EC2) and a tutorial for [Azure](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Azure).
