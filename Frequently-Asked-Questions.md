@@ -10,7 +10,7 @@ Refer to the documentation of [nvidia-container-runtime](https://github.com/nvid
 * The package provided by Canonical: `docker.io`.
 * The package provided by Red Hat: `docker`.
 
-The exact list depends on what is available for your Linux distribution.  
+The exact list depends on which upstream Docker versions are available for your Linux distribution.  
 You can look at the packages list on the [`gh-pages`](https://github.com/nvidia/nvidia-docker/tree/gh-pages/) branch of the repository.
 
 #### How do I install 2.0 if I'm not using the latest Docker version?
