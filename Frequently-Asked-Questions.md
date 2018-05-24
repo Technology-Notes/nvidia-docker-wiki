@@ -36,11 +36,14 @@ Make sure the runtime was [registered](Frequently-Asked-Questions#how-do-i-regis
 #### Why do I get the error `flag provided but not defined: -console`?
 Your version of `nvidia-container-runtime` probably doesn't match your version of Docker. You need to [pin the version](Frequently-Asked-Questions#how-do-i-install-20-if-im-not-using-the-latest-docker-version) of `nvidia-container-runtime` when installing the package.
 
-#### Why do I get the error `Depends: docker [...] but it is not installable` or `nothing provides docker [...]`
+#### Why do I get the error `Depends: docker [...] but it is not installable` or `nothing provides docker [...]`?
 This issue can usually occur in one of the following circumstances:
 * Docker is not installed on your machine and/or the official Docker package repository hasn't been set up (see also [prerequisites](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)#prerequisites)).
 * Docker is installed or is about to be upgraded and its version is not supported by NVIDIA Docker (see also [supported Docker packages](Frequently-Asked-Questions#which-docker-packages-are-supported)).
 * Docker is installed and its version supported, but it isn't the latest version available on the Docker package repository. In this case, package pinning is required (see also [not the latest Docker version](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-20-if-im-not-using-the-latest-docker-version) and [older version of Docker](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)#older-versions-of-docker)).
+
+#### Why do I get the error `file /etc/docker/daemon.json from install of nvidia-docker2 conflicts with file from package docker`?
+You are not using the official `docker-ce` package, you have [Red Hat's fork of Docker](https://github.com/projectatomic/docker). You don't need to install the `nvidia-docker2` package, you must follow [those instructions](https://github.com/flx42/nvidia-docker/#centos-7-docker-rhel-7475-docker) instead.
 
 ## Platform support
 
