@@ -4,7 +4,7 @@
 Refer to the documentation of [nvidia-container-runtime](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup)
 
 #### Which Docker packages are supported?
-* All the stable releases of [`docker-ce`](https://docs.docker.com/release-notes/docker-ce/).
+* All the stable releases of [`docker-ce`](https://docs.docker.com/release-notes/docker-ce/) installed from (https://docs.docker.com/install/)
 * Edge releases are not supported.
 * The legacy official package `docker-engine`.
 * The package provided by Canonical: `docker.io`.
