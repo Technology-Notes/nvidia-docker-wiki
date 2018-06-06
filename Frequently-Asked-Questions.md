@@ -78,7 +78,7 @@ Notably, if you use CentOS/RHEL on ppc64, you need to register the `nvidia` runt
 #### How do I use this in on my Cloud service provider (e.g. AWS, Azure, GCP)?
 We have a tutorial for [AWS](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Amazon-EC2) and a tutorial for [Azure](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Azure).
 They haven’t been updated for 2.0 yet but we are working on it and we plan to release a similar tutorial for GCP soon.\
-Alternatively, you can leverage [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC) to deploy optimized container images on AWS.
+Alternatively, you can leverage [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC) to deploy optimized container images on AWS and Azure.
 
 ## Container Runtime
 
