@@ -67,13 +67,13 @@ The driver stack on arm64 is radically different and would require a complete ar
 For your host distribution, the list of supported platforms is available [here](http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#system-requirements).\
 For your container images, both the [Docker Hub](https://github.com/NVIDIA/nvidia-docker/wiki/Docker-Hub) and [NGC registry](https://github.com/NVIDIA/nvidia-docker/wiki/NGC) images are officially supported.
 
-#### Do you support PowerPC64 (ppc64)?
-Yes, check the support matrix for each project:
+#### Do you support PowerPC64 (ppc64le)?
+Yes, little-endian only. Check the support matrix for each project:
 - https://nvidia.github.io/nvidia-docker
 - https://nvidia.github.io/nvidia-container-runtime
 - https://nvidia.github.io/libnvidia-container
 
-Notably, if you use CentOS/RHEL on ppc64, you need to register the `nvidia` runtime [manually](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup).
+Notably, if you use `docker-ce` with CentOS/RHEL on ppc64le, you need to register the `nvidia` runtime [manually](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup). If you are using Red Hat's docker distribution, you can follow the instructions in the [README]:https://github.com/NVIDIA/nvidia-docker/blob/master/README.md#centos-7-docker-rhel-7475-docker
 
 #### How do I use this in on my Cloud service provider (e.g. AWS, Azure, GCP)?
 We have a tutorial for [AWS](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Amazon-EC2) and a tutorial for [Azure](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Azure).
