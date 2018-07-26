@@ -29,22 +29,22 @@ docker run -it --name nvidia-driver --privileged --pid=host -v /run/nvidia:/run/
 
 # Run the driver container for Ubuntu 16.04 AWS in detached mode
 docker run -d --name nvidia-driver --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
-           nvidia/driver:396.37-ubuntu16.04-aws --accept-license
+  nvidia/driver:396.37-ubuntu16.04-aws --accept-license
 
 # Run the driver container for Ubuntu 16.04 HWE in detached mode with
 # auto-restarts and auto-detection of kernel updates (aka DKMS)
 docker run -d --name nvidia-driver --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
-           --restart=unless-stopped -v /etc/kernel/postinst.d:/run/kernel/postinst.d \
-           nvidia/driver:396.37-ubuntu16.04-hwe --accept-license
+  --restart=unless-stopped -v /etc/kernel/postinst.d:/run/kernel/postinst.d \
+  nvidia/driver:396.37-ubuntu16.04-hwe --accept-license
 
 # Run the driver container for Centos 7 in detached mode and check its logs 
 docker run -d --name nvidia-driver --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
-           nvidia/driver:396.37-centos7 --accept-license
+  nvidia/driver:396.37-centos7 --accept-license
 docker logs -f nvidia-driver
 
 # Build a custom driver container image for Centos 7 with the current kernel
 docker build -t nvidia-driver:centos7 --build-arg KERNEL_VERSION=$(uname -r) \
-             https://gitlab.com/nvidia/driver.git#centos7
+  https://gitlab.com/nvidia/driver.git#centos7
 
 # Perform a driver update ahead of time for a given kernel version
 docker exec nvidia-driver nvidia-driver update --kernel 4.15.0-23
@@ -75,7 +75,7 @@ sudo update-initramfs -u
 sudo reboot
 
 sudo docker run -d --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
-                --restart=unless-stopped nvidia/driver:396.37-ubuntu16.04 --accept-license
+  --restart=unless-stopped nvidia/driver:396.37-ubuntu16.04 --accept-license
 
 sudo docker run --rm --runtime=nvidia nvidia/cuda:9.2-base nvidia-smi
 ```
@@ -101,7 +101,7 @@ sudo tee -a /etc/modprobe.d/blacklist-nouveau.conf <<< "options nouveau modeset=
 sudo reboot
 
 sudo docker run -d --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
-                --restart=unless-stopped nvidia/driver:396.37-centos7 --accept-license
+  --restart=unless-stopped nvidia/driver:396.37-centos7 --accept-license
 
 sudo docker run --rm --runtime=nvidia nvidia/cuda:9.2-base nvidia-smi
 ```
