@@ -25,7 +25,7 @@ The list of prerequisites for running a driver container is described below.
 ```sh
 # Run the driver container for Ubuntu 16.04 LTS in interactive mode
 docker run -it --name nvidia-driver --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
-           nvidia/driver:396.37-ubuntu16.04
+  nvidia/driver:396.37-ubuntu16.04
 
 # Run the driver container for Ubuntu 16.04 AWS in detached mode
 docker run -d --name nvidia-driver --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
