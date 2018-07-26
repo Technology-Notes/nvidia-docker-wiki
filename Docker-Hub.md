@@ -10,7 +10,7 @@ Current supported distributions include:
 * CentOS 7
 
 For more information about a specific image please refer to its section:
-* [Driver](Driver-containers-(EXPERIMENTAL))
+* [Driver](Driver-containers-(EXPERIMENTAL)) (Experimental)
 * [[CUDA]]
-* [[NVIDIA Caffe]] (DEPRECATED see [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC))
-* [[DIGITS]] (DEPRECATED see [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC))
+* [[NVIDIA Caffe]] (Deprecated see [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC))
+* [[DIGITS]] (Deprecated see [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC))
