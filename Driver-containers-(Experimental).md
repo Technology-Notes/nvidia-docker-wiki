@@ -2,7 +2,7 @@
 
 ## Description
 
-NVIDIA driver container images are available through the [NVIDIA public hub repository](https://hub.docker.com/r/nvidia/cuda).
+NVIDIA driver container images are available through the [NVIDIA public hub repository](https://hub.docker.com/r/nvidia/driver).
 
 It allows the provisioning of the NVIDIA driver through the use of containers which provides several benefits over a standard driver installation, for example:
 - Ease of deployment
