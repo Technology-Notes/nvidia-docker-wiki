@@ -11,7 +11,7 @@ It allows the provisioning of the NVIDIA driver through the use of containers wh
 
 For more information about its internals, check out this [presentation](https://docs.google.com/presentation/d/1NY4X2K6BMaByfnF9rMEcNq6hS3NtmOKGTfihZ44zfrw/edit?usp=sharing).
 
-## Prerequisites
+## Requirements
 
 The list of prerequisites for running a driver container is described below.  
 
