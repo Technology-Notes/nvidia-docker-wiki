@@ -5,10 +5,12 @@ Current supported distributions include:
 * Ubuntu 14.04 LTS
 * Ubuntu 16.04 LTS
 * Ubuntu 17.04
+* Ubuntu 18.04 LTS
 * CentOS 6
 * CentOS 7
 
 For more information about a specific image please refer to its section:
+* [Driver](Driver-containers-(EXPERIMENTAL))
 * [[CUDA]]
-* [[NVIDIA Caffe]]
-* [[DIGITS]]
+* [[NVIDIA Caffe]] (DEPRECATED see [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC))
+* [[DIGITS]] (DEPRECATED see [NGC](https://github.com/NVIDIA/nvidia-docker/wiki/NGC))
