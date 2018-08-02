@@ -198,7 +198,7 @@ Not currently, support for Swarmkit is still being worked on in the upstream Mob
 Yes, use Compose format `2.3` and add `runtime: nvidia` to your GPU service. Docker Compose must be version [1.19.0](https://github.com/docker/compose/releases/tag/1.19.0) or higher. You can find an example [here](https://github.com/NVIDIA/gpu-monitoring-tools/blob/master/exporters/prometheus-dcgm/docker-compose.yml).
 
 #### Do you support Kubernetes?
-Since Kubernetes 1.8, the recommended way is to use our official [device plugin](https://github.com/NVIDIA/k8s-device-plugin). Note that this is still alpha support.
+Since Kubernetes 1.8, the recommended way is to use our official [device plugin](https://github.com/NVIDIA/k8s-device-plugin).
 
 
 
