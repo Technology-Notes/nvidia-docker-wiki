@@ -76,7 +76,7 @@ Yes, little-endian only. Check the support matrix for each project:
 - https://nvidia.github.io/nvidia-container-runtime
 - https://nvidia.github.io/libnvidia-container
 
-Notably, if you use `docker-ce` with CentOS/RHEL on ppc64le, you need to register the `nvidia` runtime [manually](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup). If you are using Red Hat's docker distribution, you can follow the instructions in the [README]:https://github.com/NVIDIA/nvidia-docker/blob/master/README.md#centos-7-docker-rhel-7475-docker
+Notably, if you use `docker-ce` with CentOS/RHEL on ppc64le, you need to register the `nvidia` runtime [manually](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup). If you are using Red Hat's docker distribution, you can follow the instructions in the [README](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md#centos-7-docker-rhel-7475-docker).
 
 #### How do I use this in on my Cloud service provider (e.g. AWS, Azure, GCP)?
 We have a tutorial for [AWS](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Amazon-EC2) and a tutorial for [Azure](https://github.com/NVIDIA/nvidia-docker/wiki/Deploy-on-Azure).
