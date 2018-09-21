@@ -25,7 +25,11 @@ CUDA toolkit version   | Driver version  | GPU architecture
   8.0                  | >= 367.48               | >= 2.0 (Fermi)
   9.0                  | >= 384.81               | >= 3.0 (Kepler)
   9.1                  | >= 387.26               | >= 3.0 (Kepler)
+  9.2                  | >= 396.26               | >= 3.0 (Kepler)
+  10.0                 | >= 384.130*             | Tesla GPUs*
+  10.0                 | >= 410.48               | >= 3.0 (Kepler)
 
+\* https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#cuda-compatibility-and-upgrades
 
 ## Examples
 
