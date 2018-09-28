@@ -192,6 +192,9 @@ The `devel` [image tags](https://hub.docker.com/r/nvidia/cuda/) are large since 
 As a general rule of thumb, you shouldn’t ship your application with its build-time dependencies. We recommend to use [multi-stage builds](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) for this purpose. Your final container image should use our `runtime` or `base` images.\
 As of CUDA 9.0 we now ship a `base` [image tag](https://hub.docker.com/r/nvidia/cuda/) which bundles the strict minimum of dependencies.
 
+#### Why aren't CUDA 10 images working with nvidia-docker v1?
+Starting from CUDA 10.0, the CUDA images require using nvidia-docker v2 and won't trigger the GPU enablement path from nvidia-docker v1.
+
 ## Ecosystem enablement
 
 #### Do you support Docker Swarm mode?
