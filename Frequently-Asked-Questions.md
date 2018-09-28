@@ -45,6 +45,9 @@ This issue can usually occur in one of the following circumstances:
 * Docker is installed or is about to be upgraded and its version is not supported by NVIDIA Docker (see also [supported Docker packages](Frequently-Asked-Questions#which-docker-packages-are-supported)).
 * Docker is installed and its version supported, but it isn't the latest version available on the Docker package repository. In this case, package pinning is required (see also [not the latest Docker version](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-20-if-im-not-using-the-latest-docker-version) and [older version of Docker](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)#older-versions-of-docker)).
 
+#### I'm getting `The following signatures were invalid: EXPKEYSIG` while trying to install the packages, what do I do?
+Make sure you fetched the latest GPG key from the repositories. Refer to the [repository instructions](https://nvidia.github.io/nvidia-docker/) for your distribution.
+
 #### Why do I get the error `file /etc/docker/daemon.json from install of nvidia-docker2 conflicts with file from package docker`?
 You are not using the official `docker-ce` package, you have [Red Hat's fork of Docker](https://github.com/projectatomic/docker). You don't need to install the `nvidia-docker2` package, you must follow [those instructions](https://github.com/flx42/nvidia-docker/#centos-7-docker-rhel-7475-docker) instead.
 
