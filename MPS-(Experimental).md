@@ -25,10 +25,12 @@ More information on Volta MPS can be found in the [Volta architecture whitepaper
 If you are using Docker Compose, it might further restrict the version of the Docker Engine you need.
 
 ## Docker Compose
-You need a version of [Docker Compose](https://docs.docker.com/compose/) that supports the Compose file format version `2.3`. A `docker-compose.yml` file is provided in the `sample` repository on GitLab:
+You need a version of [Docker Compose](https://docs.docker.com/compose/) that supports the Compose file format version `2.3`.
+
+A `docker-compose.yml` file is provided in the `sample` repository on GitLab:  
 https://gitlab.com/nvidia/samples/tree/master/mps
 
-Example usage:
+### Example
 ```
 $ export NVIDIA_VISIBLE_DEVICES=0
 $ export CUDA_MPS_ACTIVE_THREAD_PERCENTAGE=33 
