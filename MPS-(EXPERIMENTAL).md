@@ -45,4 +45,3 @@ To learn more about the implementation details of containerizing MPS, you can lo
 The following diagram summarizes the flow and the interactions for Docker Compose:
 ![mps on docker-compose](https://user-images.githubusercontent.com/3645581/46986109-7ae66900-d0a2-11e8-93ba-c571aae2c9b2.png)
 
-## Docker
