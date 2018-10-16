@@ -26,7 +26,7 @@
 * [[Docker Hub]]
   * [Driver (Experimental)](Driver-containers-(EXPERIMENTAL))
   * [[CUDA]]
-  * [MPS (Experimental)](MPS-(Experimental))
+  * [MPS (Experimental)](MPS-(EXPERIMENTAL))
 * [[NGC]]
 * [[Third-party]]
 
