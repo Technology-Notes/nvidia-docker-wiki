@@ -32,6 +32,8 @@ https://gitlab.com/nvidia/samples/tree/master/mps
 
 ### Example
 ```
+$ git clone https://gitlab.com/nvidia/samples.git /tmp/samples
+$ cd /tmp/samples/mps
 $ export NVIDIA_VISIBLE_DEVICES=0
 $ export CUDA_MPS_ACTIVE_THREAD_PERCENTAGE=33 
 $ docker-compose up
