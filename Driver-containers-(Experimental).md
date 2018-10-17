@@ -108,7 +108,7 @@ sudo docker run --rm --runtime=nvidia nvidia/cuda:9.2-base nvidia-smi
 
 ## Kubernetes with dockerd
 Install `nvidia-docker2` and modify `/etc/nvidia-container-runtime/config.toml` as mentioned above.
-You also need to set the default runtime to [`nvidia`](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup).
+You also need to set the default docker runtime to [`nvidia`](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup).
 ```
 # If running on bare-metal
 kubectl create -f https://gitlab.com/nvidia/samples/raw/master/driver/ubuntu16.04/kubernetes/nvidia-driver.yml
