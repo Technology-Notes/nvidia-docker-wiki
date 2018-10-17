@@ -106,5 +106,22 @@ sudo docker run -d --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
 sudo docker run --rm --runtime=nvidia nvidia/cuda:9.2-base nvidia-smi
 ```
 
+## Kubernetes with dockerd
+Install `nvidia-docker2` and modify `/etc/nvidia-container-runtime/config.toml` as mentioned above.
+You also need to set the default runtime to [`nvidia`](https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup).
+```
+# If running on bare-metal
+kubectl create -f https://gitlab.com/nvidia/samples/raw/master/driver/ubuntu16.04/kubernetes/nvidia-driver.yml
+
+# If running on AWS
+kubectl create -f https://gitlab.com/nvidia/samples/raw/master/driver/ubuntu16.04/kubernetes/nvidia-driver-aws.yml
+```
+You can now deploy the [NVIDIA device plugin](https://github.com/NVIDIA/k8s-device-plugin).
+
+Deleting the pod will unload the NVIDIA driver from the machine:
+```
+kubectl delete daemonset.apps/nvidia-driver-daemonset
+```
+
 ## Tags available
 Check the [DockerHub](https://hub.docker.com/r/nvidia/driver/)
