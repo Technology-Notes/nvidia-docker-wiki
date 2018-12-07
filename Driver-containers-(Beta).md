@@ -1,4 +1,4 @@
-**Note that the features described below are currently experimental**.
+**Note that the features described below are currently beta**.
 
 ## Description
 
