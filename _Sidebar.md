@@ -24,7 +24,7 @@
 
 **Container images**
 * [[Docker Hub]]
-  * [Driver (Experimental)](Driver-containers-(Beta))
+  * [Driver (Beta)](Driver-containers-(Beta))
   * [[CUDA]]
   * [MPS (Experimental)](MPS-(EXPERIMENTAL))
 * [[NGC]]
