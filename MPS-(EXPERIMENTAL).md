@@ -39,6 +39,24 @@ $ export CUDA_MPS_ACTIVE_THREAD_PERCENTAGE=33
 $ docker-compose up
 ```
 
+Note: If you want the CUDA sample (here nbody) to run on multiple GPUs, you will need to edit the CLI arguments passed to the nbody executable.
+e.g:
+```
+cat cuda-samples/Dockerfile
+FROM nvidia/cuda:9.0-base-ubuntu16.04
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        cuda-samples-$CUDA_PKG_VERSION && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/local/cuda/samples/5_Simulations/nbody
+
+RUN make -j"$(nproc)"
+
+# Edit the numdevices option so that it can run on multiple devices
+CMD ["./nbody", "-benchmark", "-i=10000", "-numdevices=8"]
+```
+
 ### Details
 To learn more about the implementation details of containerizing MPS, you can look at the comments in the `docker-compose.yml` file.
 
