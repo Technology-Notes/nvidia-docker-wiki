@@ -16,7 +16,7 @@ You can look at the packages list on the [`gh-pages`](https://github.com/nvidia/
 #### How do I install 2.0 if I'm not using the latest Docker version?
 You must pin the versions of both `nvidia-docker2` and `nvidia-container-runtime` when installing, for instance:
 ```
-sudo apt-get install -y nvidia-docker2=2.0.2+docker1.12.6-1 nvidia-container-runtime=1.1.1+docker1.12.6-1
+sudo apt-get install -y nvidia-docker2=2.0.3+docker18.09.1-1 nvidia-container-runtime=2.0.0+docker18.08.1-1
 ```
 Use `apt-cache madison nvidia-docker2 nvidia-container-runtime` or `yum search --showduplicates nvidia-docker2 nvidia-container-runtime` to list the available versions.
 
