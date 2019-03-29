@@ -28,8 +28,8 @@ CUDA toolkit version   | Driver version  | GPU architecture
   9.2                  | >= 396.26               | >= 3.0 (Kepler)
   10.0                 | >= 384.130, < 385.00    | [Tesla GPUs](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#flexible-upgrade-path)
   10.0                 | >= 410.48               | >= 3.0 (Kepler)
-  10.1                 | >= 384.111, < 385.00, 
->=410.72, < 411.00                               | [Tesla GPUs](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#flexible-upgrade-path)
+  10.1                 | >= 384.111, < 385.00    | [Tesla GPUs](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#flexible-upgrade-path)
+  10.1                 | >=410.72, < 411.00      | [Tesla GPUs](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#flexible-upgrade-path)
   10.1                 | >= 418.39               | >= 3.0 (Kepler)
 
 ## Examples
