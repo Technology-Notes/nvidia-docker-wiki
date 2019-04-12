@@ -122,6 +122,12 @@ No, running a X server inside the container is not supported at the moment and t
 GPU isolation is achieved through a container environment variable called `NVIDIA_VISIBLE_DEVICES`.\
 Devices can be referenced by index (following the PCI bus order) or by UUID (refer to the [documentation](https://github.com/nvidia/nvidia-container-runtime#nvidia_visible_devices)).
 
+e.g:
+```
+# If you have 4 GPUs, to isolate GPUs 3 and 4 (/dev/nvidia2 and /dev/nvidia3)
+$ docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=2,3 $IMAGE_ID
+```
+
 #### Why is `nvidia-smi` inside the container not listing the running processes?
 `nvidia-smi` and NVML are not compatible with [PID namespaces](http://man7.org/linux/man-pages/man7/pid_namespaces.7.html).\
 We recommend monitoring your processes on the host or inside a container using `--pid=host`.
