@@ -125,7 +125,7 @@ Devices can be referenced by index (following the PCI bus order) or by UUID (ref
 e.g:
 ```
 # If you have 4 GPUs, to isolate GPUs 3 and 4 (/dev/nvidia2 and /dev/nvidia3)
-$ docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=2,3 $IMAGE_ID
+$ docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=2,3 nvidia/cuda:10.0-base nvidia-smi
 ```
 
 #### Why is `nvidia-smi` inside the container not listing the running processes?
