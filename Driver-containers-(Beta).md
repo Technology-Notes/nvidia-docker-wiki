@@ -80,7 +80,7 @@ sudo update-initramfs -u
 sudo reboot
 
 sudo docker run -d --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
-  --restart=unless-stopped nvidia/driver:418.56-ubuntu18.04 --accept-license
+  --restart=unless-stopped nvidia/driver:418.40.04-ubuntu18.04 --accept-license
 
 sudo docker run --rm --runtime=nvidia nvidia/cuda:9.2-base nvidia-smi
 ```
