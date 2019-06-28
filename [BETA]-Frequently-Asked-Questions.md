@@ -102,7 +102,7 @@ This is not currently supported but you can enforce it:
 * At the container orchestration layer (Kubernetes, Swarm, Mesos, Slurm…) since this is tied to resource allocation.
 * At the driver level by setting the [compute mode](http://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-modes) of the GPU.
 
-#### Why is my container slow to start with 2.0?
+#### Why is my container slow to start?
 You probably need to enable [persistence mode](http://docs.nvidia.com/deploy/driver-persistence/index.html) to keep the kernel modules loaded and the GPUs initialized.\
 The recommended way is to start the `nvidia-persistenced` daemon on your host.
 
@@ -144,8 +144,8 @@ Yes, container images are available on [Docker Hub](https://github.com/NVIDIA/nv
 #### Can I use the GPU during a container build (i.e. `docker build`)?
 Yes, as long as you [configure your Docker daemon](https://github.com/NVIDIA/nvidia-docker/wiki/Advanced-topics#default-runtime) to use the `nvidia` runtime as the default, you will be able to have build-time GPU support. However, be aware that this can render your images non-portable (see also [invalid device function](#what-is-causing-the-cuda-invalid-device-function-error)).
 
-#### Are my container images built for version 1.0 compatible with 2.0?
-Yes, for most cases. The main difference being that we don’t mount all driver libraries by default in 2.0. You might need to set the `CUDA_DRIVER_CAPABILITIES` environment variable in your Dockerfile or when starting the container. Check the documentation of [nvidia-container-runtime](https://github.com/nvidia/nvidia-container-runtime#environment-variables-oci-spec).
+#### Are my container images built for version 1.0 compatible with 2.0 and 3.0?
+Yes, for most cases. The main difference being that we don’t mount all driver libraries by default in 2.0 and 3.0. You might need to set the `CUDA_DRIVER_CAPABILITIES` environment variable in your Dockerfile or when starting the container. Check the documentation of [nvidia-container-runtime](https://github.com/nvidia/nvidia-container-runtime#environment-variables-oci-spec).
 
 #### How do I link against driver APIs at build time (e.g. `libcuda.so` or `libnvidia-ml.so`)?
 Use the library stubs provided in `/usr/local/cuda/lib64/stubs/`. Our official images already take care of setting [`LIBRARY_PATH`](https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/9.0/devel/Dockerfile#L12).
