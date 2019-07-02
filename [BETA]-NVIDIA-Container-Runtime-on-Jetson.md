@@ -217,7 +217,7 @@ $ sudo pkill -SIGHUP dockerd
 ```
 
 ### Docker info doesn’t show the NVIDIA runtime
-```shell
+```diff
 $ sudo docker info | grep nvidia
 
 $ sudo pkill -SIGHUP dockerd
