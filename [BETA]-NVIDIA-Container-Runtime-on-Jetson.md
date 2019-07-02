@@ -12,7 +12,8 @@ The purpose of this document is to provide users with steps on getting started w
 # Installation
 The NVIDIA Container Runtime for Docker (via the nvidia-docker2 packages) will be available for installation as part of JetPack with the other SDK components (CUDA, AI, Computer Vision, …) as shown below in figure 1.
 
-Figure 1: Jetpack Installation step 2
+![](https://lh3.googleusercontent.com/_IrW289rk7TV-KjJNcxc8RZxoAyBjaoyjAxSBTTbYK97izactu5UhTgRsw3kFO8widR_Ze_R1UjgSqHpcenVL3rBB8y9qd5NkSb8Ciw6G4i3lMCzQ4HbTjpwhDclM7LWMp4I-c_9)
+_Figure 1: Jetpack Installation step 2_
 
 Once your nano configured you can check that the NVIDIA runtime is installed by running the following commands:
 ```diff
@@ -43,7 +44,7 @@ root@nano:/# ./nbody
 ```
 
 You should see the following result:
-
+![](https://lh3.googleusercontent.com/i2W0kbAvSi-qqeD4VxK44gXH2N0svJz2GBM9cRFoLoDNuNtTV9ruYQv_EUFwZZQEI30xJyouxdkHYVFAkR8I7I23zN9JrHG9_tNnOnaqYsV3swTpjxPj2CcUBaAN0nLR2dFoE8Ht)
 ```
 If you don’t see the packages in the first command or if you don’t see the runtime head to the Troubleshooting section.
 
