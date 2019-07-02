@@ -44,9 +44,11 @@ root@nano:/# ./nbody
 ```
 
 You should see the following result:
+
 ![](https://lh3.googleusercontent.com/i2W0kbAvSi-qqeD4VxK44gXH2N0svJz2GBM9cRFoLoDNuNtTV9ruYQv_EUFwZZQEI30xJyouxdkHYVFAkR8I7I23zN9JrHG9_tNnOnaqYsV3swTpjxPj2CcUBaAN0nLR2dFoE8Ht)
-```
+
 If you don’t see the packages in the first command or if you don’t see the runtime head to the Troubleshooting section.
+
 
 ## Building CUDA in Containers on Jetson
 
