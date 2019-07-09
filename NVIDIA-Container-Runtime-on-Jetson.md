@@ -1,21 +1,17 @@
-# NVIDIA Container Runtime on Jetson
+# NVIDIA Container Runtime on Jetson (Beta)
 ## Introduction
 
-	As part of JetPack 4.2.1, users will now be able to use an early access of NVIDIA Container Runtime for Docker. Users will be able to run Deep Learning and HPC containers that are GPU accelerated with Docker on Jetson devices.
+_**NVIDIA JetPack 4.2.1 includes a beta version of NVIDIA Container Runtime with Docker integration for the Jetson platform. This enables users to run GPU accelerated Deep Learning and HPC containers on Jetson devices.**_
 
-The NVIDIA runtime enables graphics and video processing applications such as DeepStream to be run in containers on the Jetson platform. As part of this release, users have access to two Jetson container images:
-- nvcr.io/nvidia/linux4tegra-base:r32.1
-- nvcr.io/nvidia/deepstream
-
-The purpose of this document is to provide users with steps on getting started with running Docker containers on Jetson using the NVIDIA runtime. 
+The NVIDIA runtime enables graphics and video processing applications such as DeepStream to be run in containers on the Jetson platform. The purpose of this document is to provide users with steps on getting started with running Docker containers on Jetson using the NVIDIA runtime. The beta supports Jetson AGX, TX2 and Nano devices. 
 
 # Installation
-The NVIDIA Container Runtime for Docker (via the nvidia-docker2 packages) will be available for installation as part of JetPack with the other SDK components (CUDA, AI, Computer Vision, …) as shown below in figure 1.
+NVIDIA Container Runtime with Docker integration (via the _nvidia-docker2_ packages) is included as part of [NVIDIA JetPack](https://developer.nvidia.com/embedded/jetpack). It is available for install via the [NVIDIA SDK Manager](https://docs.nvidia.com/sdk-manager/index.html) along with other JetPack components as shown below in Figure 1. 
 
 ![](https://lh3.googleusercontent.com/_IrW289rk7TV-KjJNcxc8RZxoAyBjaoyjAxSBTTbYK97izactu5UhTgRsw3kFO8widR_Ze_R1UjgSqHpcenVL3rBB8y9qd5NkSb8Ciw6G4i3lMCzQ4HbTjpwhDclM7LWMp4I-c_9)
 _Figure 1: Jetpack Installation step 2_
 
-Once your nano configured you can check that the NVIDIA runtime is installed by running the following commands:
+Once your Nano configured you can verify that the NVIDIA runtime is installed by running the following commands:
 ```diff
 $ sudo dpkg --get-selections | grep nvidia
 libnvidia-container-tools			install
@@ -27,10 +23,15 @@ nvidia-docker2				install
 $ sudo docker info | grep nvidia
 + Runtimes: nvidia runc
 ```
+If you don’t see the packages in the first command or if you don’t see the runtime head to the Troubleshooting section.
 
 ## Hello-world!
 
-Once done with the installation process, we’ll go ahead and create a cool graphics application
+Once done with the installation process, let's go ahead and create a cool graphics application. As part of this release, users have access to an L4T base container image from NGC for Jetson:
+- nvcr.io/nvidia/l4t-base:r32.2
+
+Users can extend this base image to build their own containers for use on Jetson devices. In this example, we will run a simple N-body simulation using the CUDA nbody sample. Since this sample requires access to the X server, an additional step is required as shown below before running the container. 
+
 ```
 # Allow containers to communicate with Xorg
 $ sudo xhost +si:localuser:root
@@ -46,9 +47,6 @@ root@nano:/# ./nbody
 You should see the following result:
 
 ![](https://lh3.googleusercontent.com/i2W0kbAvSi-qqeD4VxK44gXH2N0svJz2GBM9cRFoLoDNuNtTV9ruYQv_EUFwZZQEI30xJyouxdkHYVFAkR8I7I23zN9JrHG9_tNnOnaqYsV3swTpjxPj2CcUBaAN0nLR2dFoE8Ht)
-
-If you don’t see the packages in the first command or if you don’t see the runtime head to the Troubleshooting section.
-
 
 ## Building CUDA in Containers on Jetson
 
@@ -95,9 +93,9 @@ Result = PASS
 Known limitation: The base l4t image doesn’t allow you to statically compile with all CUDA libraries. Only libcudadevrt.a and libcudart_static.a are included.
 
 ## Enabling Jetson Containers on an x86 workstation (using qemu)
-One of the very cool features that are now enabled is the ability to build ARM CUDA binaries on your x86 machine without needing a cross compiler.
-You can very easily run aarch64 containers on your x86 workstation by using qemu’s virtualization features, this section will go over the steps to enable that. The next section will go over the workflow that allows you to build on x86 and then run on Jetson.
-Installing the following packages should allow you to enable support for aarch64 containers on x86:
+One of the very cool features that are now enabled is the ability to build Arm CUDA binaries on your x86 machine without needing a cross compiler.
+You can very easily run AArch64 containers on your x86 workstation by using qemu’s virtualization features. This section will go over the steps to enable that. The next section will go over the workflow that allows you to build on x86 and then run on Jetson.
+Installing the following packages should allow you to enable support for AArch64 containers on x86:
 ```shell
 $ sudo apt-get install qemu binfmt-support qemu-user-static
 
@@ -120,7 +118,7 @@ You’ll usually find errors in the form: exec user process caused "exec format 
 
 ## Building Jetson Containers on an x86 workstation (using qemu)
 
-Now that you have the required setup, we can get to building an ARM CUDA application on x86. Simply copy your code inside your container and run nvcc.
+Now that you have the required setup, we can get to building an Arm CUDA application on x86. Simply copy your code inside your container and run nvcc.
 
 ```
 $ mkdir /tmp/docker-build && cd /tmp/docker-build
@@ -186,7 +184,7 @@ $ sudo dpkg --get-selections | grep nvidia
 - nvidia-docker2				install
 ```
 
-You need to reinstall the NVIDIA Container Runtime for Docker using the Jetpack process. Make sure that no errors are shown in the UI.
+You need to reinstall the NVIDIA Container Runtime for Docker using the JetPack process. Make sure that no errors are shown in the UI.
 
 ### nvidia-docker2 package is missing from dpkg’s output
 
@@ -247,7 +245,7 @@ ldconfig = "@/sbin/ldconfig.real"
 ```
 
 ### /usr/local/cuda is readonly
-One of the limitations of this tech preview is that we are mounting the cuda directory from the host. This was done with size in mind as a devel CUDA container weighs 3GB, on Nano it’s not always possible to afford such a huge cost. We are currently working towards creating smaller full blown CUDA containers.
+One of the limitations of the beta is that we are mounting the cuda directory from the host. This was done with size in mind as a development CUDA container weighs 3GB, on Nano it’s not always possible to afford such a huge cost. We are currently working towards creating smaller CUDA containers.
 
 
 ### Running or building a container on x86 (using qemu+binfmt_misc) is failing
@@ -274,7 +272,7 @@ sudo podman build -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -
 ```
 
 ### Mount Plugins
-The NVIDIA Software stack, so that it can ultimately run GPU code, talks to the NVIDIA driver through a number of userland libraries (e.g: libcuda.so). Because the driver API is not stable, these libraries are shipped and installed by the NVIDIA driver.
+The NVIDIA software stack, so that it can ultimately run GPU code, talks to the NVIDIA driver through a number of userland libraries (e.g: libcuda.so). Because the driver API is not stable, these libraries are shipped and installed by the NVIDIA driver.
 
 In effect, what that means is that having a container which contains these libraries, ties it to the driver version it was built and ran against. Therefore moving that container to another machine becomes impossible. The approach we decided to take is to mount, at runtime, these libraries from your host filesystem into your container.
 
