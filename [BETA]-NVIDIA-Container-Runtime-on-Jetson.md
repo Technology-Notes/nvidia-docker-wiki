@@ -272,3 +272,10 @@ If running `docker build`; perhaps a better option is to use ‘podman’ (https
 # volume mount /usr/bin/qemu-aarch64-static
 sudo podman build -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -t <image_tag> .
 ```
+
+### Mount Plugins
+The NVIDIA Software stack, so that it can ultimately run GPU code, talks to the NVIDIA driver through a number of userland libraries (e.g: libcuda.so). Because the driver API is not stable, these libraries are shipped and installed by the NVIDIA driver.
+
+In effect, what that means is that having a container which contains these libraries, ties it to the driver version it was built and ran against. Therefore moving that container to another machine becomes impossible. The approach we decided to take is to mount, at runtime, these libraries from your host filesystem into your container.
+
+Internally the NVIDIA Container Runtime stack uses a plugin system to specify what files may be mounted from the host to the container. You can learn more about this system here: https://github.com/NVIDIA/libnvidia-container/blob/jetson/design/mount_plugins.md
