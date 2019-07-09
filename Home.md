@@ -22,7 +22,7 @@ Select the topic you want to learn about from the list on the right.
 * [Is Microsoft Windows supported?](Frequently-Asked-Questions#is-microsoft-windows-supported)
 * [Do you support Microsoft native container technologies (e.g. Windows server, Hyper-v)?](Frequently-Asked-Questions#do-you-support-microsoft-native-container-technologies-eg-windows-server-hyper-v)
 * [Do you support Optimus (i.e. NVIDIA dGPU + Intel iGPU)?](Frequently-Asked-Questions#do-you-support-optimus-ie-nvidia-dgpu--intel-igpu)
-* [Do you support Tegra platforms (arm64)?](Frequently-Asked-Questions#do-you-support-tegra-platforms-arm64)
+* [Do you support Jetson platforms (ARM64)?](Frequently-Asked-Questions#do-you-support-Jetson-platforms-ARM64)
 * [What distributions are officially supported?](Frequently-Asked-Questions#what-distributions-are-officially-supported)
 * [Do you support PowerPC64 (ppc64le)?](Frequently-Asked-Questions#do-you-support-powerpc64-ppc64le)
 * [How do I use this in on my Cloud service provider (e.g. AWS, Azure, GCP)?](Frequently-Asked-Questions#how-do-i-use-this-in-on-my-cloud-service-provider-eg-aws-azure-gcp)
