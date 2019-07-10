@@ -18,7 +18,7 @@ Select the topic you want to learn about from the list on the right.
 
 ### Platform support
 
-* [Do you support Jetson platforms (ARM64)?](Frequently-Asked-Questions#do-you-support-Jetson-platforms-ARM64)
+* [Do you support Jetson platforms (AArch64)?](Frequently-Asked-Questions#do-you-support-Jetson-platforms-AArch64)
 * [Is macOS supported?](Frequently-Asked-Questions#is-macos-supported)
 * [Is Microsoft Windows supported?](Frequently-Asked-Questions#is-microsoft-windows-supported)
 * [Do you support Microsoft native container technologies (e.g. Windows server, Hyper-v)?](Frequently-Asked-Questions#do-you-support-microsoft-native-container-technologies-eg-windows-server-hyper-v)
