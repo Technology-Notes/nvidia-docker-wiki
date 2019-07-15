@@ -277,3 +277,17 @@ The NVIDIA software stack, so that it can ultimately run GPU code, talks to the 
 In effect, what that means is that having a container which contains these libraries, ties it to the driver version it was built and ran against. Therefore moving that container to another machine becomes impossible. The approach we decided to take is to mount, at runtime, these libraries from your host filesystem into your container.
 
 Internally the NVIDIA Container Runtime stack uses a plugin system to specify what files may be mounted from the host to the container. You can learn more about this system here: https://github.com/NVIDIA/libnvidia-container/blob/jetson/design/mount_plugins.md
+
+### Supported Devices
+
+The nvidia container runtime exposes select device nodes from the host to container required to enable the following functionality within containers:
+* frame buffer
+* video decode (nvdec)
+* color space conversion & scaling (vic)
+* CUDA & TensorRT (through various nvhost devices)
+* display (based on for eglsink, 3dsink, overlaysink)
+ 
+Note that the decode, vic and display functionality can be accessed from software using the associated gstreamer plugins available as part of the GStreamer version 1.0 based accelerated solution in L4T.
+
+In terms of camera input, USB cameras are supported, but CSI cameras are NOT.
+In order to access USB cameras from inside the container, the user needs to mount the device node that gets dynamically created when a camera is plugged in – eg: /dev/video0. This can be accomplished using the --device option supported by docker as documented here: https://docs.docker.com/engine/reference/commandline/run/#add-host-device-to-container---device
