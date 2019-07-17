@@ -3,7 +3,7 @@
 
 _**NVIDIA JetPack 4.2.1 includes a beta version of NVIDIA Container Runtime with Docker integration for the Jetson platform. This enables users to run GPU accelerated Deep Learning and HPC containers on Jetson devices.**_
 
-The NVIDIA runtime enables graphics and video processing applications such as DeepStream to be run in containers on the Jetson platform. The purpose of this document is to provide users with steps on getting started with running Docker containers on Jetson using the NVIDIA runtime. The beta supports Jetson AGX, TX2 and Nano devices. 
+The NVIDIA runtime enables graphics and video processing applications such as DeepStream to be run in containers on the Jetson platform. The purpose of this document is to provide users with steps on getting started with running Docker containers on Jetson using the NVIDIA runtime. The beta supports Jetson AGX, TX1, TX2 and Nano devices. 
 
 # Installation
 NVIDIA Container Runtime with Docker integration (via the _nvidia-docker2_ packages) is included as part of [NVIDIA JetPack](https://developer.nvidia.com/embedded/jetpack). It is available for install via the [NVIDIA SDK Manager](https://docs.nvidia.com/sdk-manager/index.html) along with other JetPack components as shown below in Figure 1. 
@@ -289,5 +289,6 @@ The nvidia container runtime exposes select device nodes from the host to contai
  
 Note that the decode, vic and display functionality can be accessed from software using the associated gstreamer plugins available as part of the GStreamer version 1.0 based accelerated solution in L4T.
 
-In terms of camera input, USB cameras are supported, but CSI cameras are NOT.
-In order to access USB cameras from inside the container, the user needs to mount the device node that gets dynamically created when a camera is plugged in – eg: /dev/video0. This can be accomplished using the --device option supported by docker as documented here: https://docs.docker.com/engine/reference/commandline/run/#add-host-device-to-container---device
+In terms of camera input, USB cameras are supported, but CSI cameras are NOT. In order to access USB cameras from inside the container, the user needs to mount the device node that gets dynamically created when a camera is plugged in – eg: /dev/video0. This can be accomplished using the --device option supported by docker as documented here: https://docs.docker.com/engine/reference/commandline/run/#add-host-device-to-container---device
+
+Note that use of DLA from within the container has not been validated.
