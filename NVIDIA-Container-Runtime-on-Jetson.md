@@ -35,7 +35,7 @@ Users can extend this base image to build their own containers for use on Jetson
 ```
 # Allow containers to communicate with Xorg
 $ sudo xhost +si:localuser:root
-$ sudo docker run --runtime nvidia --network host -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidian/nvidia-l4t-base:r32.1
+$ sudo docker run --runtime nvidia --network host -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/l4t-base:r32.2
 
 root@nano:/# apt-get update && apt-get install -y --no-install-recommends make g++
 root@nano:/# cp -r /usr/local/cuda/samples /tmp
@@ -56,7 +56,7 @@ Docker gives you the ability to build containers using the “docker build” co
 $ mkdir /tmp/docker-build && cd /tmp/docker-build
 $ cp -r /usr/local/cuda/samples/ ./
 $ tee ./Dockerfile <<EOF
-FROM nvcr.io/nvidian/nvidia-l4t-base:r32.1
+FROM nvcr.io/nvidia/l4t-base:r32.2
 
 RUN apt-get update && apt-get install -y --no-install-recommends make g++
 COPY ./samples /tmp/samples
@@ -125,7 +125,7 @@ $ mkdir /tmp/docker-build && cd /tmp/docker-build
 $ cp -r /usr/local/cuda/samples/ ./
 
 $ tee ./Dockerfile <<EOF
-FROM nvcr.io/nvidian/nvidia-l4t-base:r32.1
+FROM nvcr.io/nvidia/l4t-base:r32.2
 
 RUN apt-get update && apt-get install -y --no-install-recommends make g++
 COPY ./samples /tmp/samples
@@ -162,7 +162,7 @@ Result = PASS
 Alternatively you can get a shell running, mount your code inside the container and compile it.
 
 ```
-$ sudo docker run -it -v /usr/local/cuda:/usr/local/cuda http://nvcr.io/nvidian/nvidia-l4t-base:r32.1
+$ sudo docker run -it -v /usr/local/cuda:/usr/local/cuda http://nvcr.io/nvidia/l4t-base:r32.2
 root@x86host:/# apt-get update && apt-get install -y --no-install-recommends make g++
 root@x86host:/# cp -r /usr/local/cuda/samples /tmp
 root@x86host:/# cd /tmp/samples/5_Simulations/nbody
@@ -265,7 +265,7 @@ If the flags does not include ‘F’ then the kernel is loading the interpreter
 
 ```
 # volume mount /usr/bin/qemu-aarch64-static
-docker run -it -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -v /usr/local/cuda:/usr/local/cuda http://nvcr.io/nvidian/nvidia-l4t-base:r32.1
+docker run -it -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -v /usr/local/cuda:/usr/local/cuda http://nvcr.io/nvidia/l4t-base:r32.2
 If running `docker build`; perhaps a better option is to use ‘podman’ (https://podman.io/) instead. Install podman on the system and run `podmand build` with `-v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static`. Example:
 # volume mount /usr/bin/qemu-aarch64-static
 sudo podman build -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -t <image_tag> .
