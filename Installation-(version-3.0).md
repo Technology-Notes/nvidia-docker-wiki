@@ -1,6 +1,6 @@
 ## Prerequisites
 
-The list of prerequisites for running nvidia-docker 2.0 is described below.  
+The list of prerequisites for running the NVIDIA runtime is described below.  
 For information on how to install Docker for your Linux distribution, please refer to the [Docker documentation](https://docs.docker.com/engine/installation).
 
 1. GNU/Linux x86_64 with kernel version > 3.10
@@ -10,7 +10,7 @@ For information on how to install Docker for your Linux distribution, please ref
 
 Your driver version might limit your CUDA capabilities (see [CUDA requirements](CUDA#requirements))
 
-## Installing version 2.0
+## Installing version 3.0
 
 **Make sure you have installed the [NVIDIA driver](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver) and a [supported version](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#which-docker-packages-are-supported) of [Docker](https://docs.docker.com/engine/installation/) for your distribution (see [prerequisites](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)#prerequisites)).**
 
@@ -23,7 +23,7 @@ $ sudo yum install -y nvidia-container-toolkit
 ```
 
 ## Usage
-The NVIDIA Container Toolkit is integrated with the Docker CLI and it can be used pretty seemlessly
+The NVIDIA runtime is integrated with the Docker CLI and GPUs can be accessed seamlessly by the container via the Docker CLI options. Some examples are shown below. 
 ```
 # Starting a GPU enabled container
 $ docker run --gpus all nvidia/cuda nvidia-smi
