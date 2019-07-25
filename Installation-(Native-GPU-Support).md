@@ -10,7 +10,7 @@ For information on how to install Docker for your Linux distribution, please ref
 
 Your driver version might limit your CUDA capabilities (see [CUDA requirements](CUDA#requirements))
 
-## Installing version 3.0
+## Installing GPU Support
 
 **Make sure you have installed the [NVIDIA driver](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver) and a [supported version](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#which-docker-packages-are-supported) of [Docker](https://docs.docker.com/engine/installation/) for your distribution (see [prerequisites](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)#prerequisites)).**
 
