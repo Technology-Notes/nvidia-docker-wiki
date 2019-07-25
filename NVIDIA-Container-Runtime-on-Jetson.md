@@ -3,7 +3,7 @@
 
 _**NVIDIA JetPack 4.2.1 includes a beta version of NVIDIA Container Runtime with Docker integration for the Jetson platform. This enables users to run GPU accelerated Deep Learning and HPC containers on Jetson devices.**_
 
-The NVIDIA runtime enables graphics and video processing applications such as DeepStream to be run in containers on the Jetson platform. The purpose of this document is to provide users with steps on getting started with running Docker containers on Jetson using the NVIDIA runtime. The beta supports Jetson AGX, TX1, TX2 and Nano devices. 
+The NVIDIA runtime enables graphics and video processing applications such as DeepStream to be run in containers on the Jetson platform. The purpose of this document is to provide users with steps on getting started with running Docker containers on Jetson using the NVIDIA runtime. The beta supports Jetson AGX Xavier, Jetson TX2 series, Jetson TX1, and Jetson Nano devices. 
 
 # Installation
 NVIDIA Container Runtime with Docker integration (via the _nvidia-docker2_ packages) is included as part of [NVIDIA JetPack](https://developer.nvidia.com/embedded/jetpack). It is available for install via the [NVIDIA SDK Manager](https://docs.nvidia.com/sdk-manager/index.html) along with other JetPack components as shown below in Figure 1. 
@@ -11,7 +11,7 @@ NVIDIA Container Runtime with Docker integration (via the _nvidia-docker2_ packa
 ![](https://lh3.googleusercontent.com/_IrW289rk7TV-KjJNcxc8RZxoAyBjaoyjAxSBTTbYK97izactu5UhTgRsw3kFO8widR_Ze_R1UjgSqHpcenVL3rBB8y9qd5NkSb8Ciw6G4i3lMCzQ4HbTjpwhDclM7LWMp4I-c_9)
 _Figure 1: Jetpack Installation step 2_
 
-Once your Nano configured you can verify that the NVIDIA runtime is installed by running the following commands:
+After JetPack is installed to your Jetson device, you can check that the NVIDIA Container Runtime is installed by running the following commands:
 ```diff
 $ sudo dpkg --get-selections | grep nvidia
 libnvidia-container-tools			install
