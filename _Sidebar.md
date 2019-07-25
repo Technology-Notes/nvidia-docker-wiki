@@ -8,9 +8,12 @@
 **Introduction**
 * [[What is Docker?]]
 * [[Motivation]]
-* [[About version 2.0]]
 
-**Version 2.0**
+**Native GPU Support**
+* [Installation](Installation-(Native-GPU-Support))
+* [Usage](Installation-(Native-GPU-Support)#usage)
+
+**Version 2.0 (Deprecated)**
 * [Installation](Installation-(version-2.0))
 * [[Usage]]
 * [[Advanced topics]]
