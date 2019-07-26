@@ -23,7 +23,7 @@ Make sure you fetched the latest GPG key from the repositories. Refer to the [re
 ## Platform support
 
 #### Do you support Jetson platforms (AArch64)?
-Yes - beta support of the NVIDIA Container Runtime is now available on Jetson platforms (AGX, TX2 and Nano). See this link for more information on getting started.
+Yes - beta support of the NVIDIA Container Runtime is now available on Jetson platforms (AGX, TX2 and Nano). See [this link](https://github.com/NVIDIA/nvidia-docker/wiki/NVIDIA-Container-Runtime-on-Jetson) for more information on getting started.
 
 #### Is macOS supported?
 No, we do not support macOS (regardless of the version), however you can use the native macOS Docker client to deploy your containers remotely (refer to the [dockerd documentation](https://docs.docker.com/engine/reference/commandline/dockerd/#description)).
