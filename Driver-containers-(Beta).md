@@ -21,6 +21,28 @@ The list of prerequisites for running a driver container is described below.
 1. The [NVIDIA Container Runtime for Docker](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)) configured with the `root` option
 1. If you are running Ubuntu 18.04 with an AWS kernel, you also need to enable the `i2c_core` kernel module
 
+## Configuration
+
+You will need to update the NVIDIA Container Toolkit config file so that the `root` directive points to the driver container:
+```
+disable-require = false
+#swarm-resource = "DOCKER_RESOURCE_GPU"
+
+[nvidia-container-cli]
+root = "/run/nvidia/driver"
+#path = "/usr/bin/nvidia-container-cli"
+environment = []
+#debug = "/var/log/nvidia-container-toolkit.log"
+#ldcache = "/etc/ld.so.cache"
+load-kmods = true
+#no-cgroups = false
+#user = "root:video"
+ldconfig = "@/sbin/ldconfig.real"
+
+[nvidia-container-runtime]
+#debug = "/var/log/nvidia-container-runtime.log"
+```
+
 ## Examples
 
 ```sh
