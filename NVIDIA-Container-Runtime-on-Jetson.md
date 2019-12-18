@@ -1,7 +1,7 @@
 # NVIDIA Container Runtime on Jetson (Beta)
 ## Introduction
 
-_**NVIDIA JetPack starting with 4.2.1 includes a beta version of NVIDIA Container Runtime with Docker integration for the Jetson platform. This enables users to run GPU accelerated Deep Learning and HPC containers on Jetson devices.**_
+_**Starting with v4.2.1, NVIDIA JetPack includes a beta version of NVIDIA Container Runtime with Docker integration for the Jetson platform. This enables users to run GPU accelerated Deep Learning and HPC containers on Jetson devices.**_
 
 The NVIDIA runtime enables graphics and video processing applications such as DeepStream to be run in containers on the Jetson platform. The purpose of this document is to provide users with steps on getting started with running Docker containers on Jetson using the NVIDIA runtime. The beta supports Jetson AGX Xavier, Jetson TX2 series, Jetson TX1, and Jetson Nano devices. 
 
